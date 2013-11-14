@@ -1,0 +1,12 @@
+[{"localized_messaging_section":{
+    "key":"core",
+    "id":1,
+    "fields":[{"localized_messaging_field":{
+        "id":1,
+        "localized_messaging_section_id":1,
+        "key":"welcome_message",
+        "value":"Hello App",
+        "locale_id":1
+    }}]
+    }
+}]

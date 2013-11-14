@@ -1,0 +1,24 @@
+(function(){
+	
+	var SystemDownCommand = function() {
+		this.initialize();
+	};
+	
+	var p = SystemDownCommand.prototype;
+	
+	p.initialize = function (){};
+	
+	p.execute = function($event){
+
+		if($event.instruction == <%= nameSpace %>.SystemDownDisplayEvent.SHOW)
+			new <%= nameSpace %>.SystemDownDisplayEvent(<%= nameSpace %>.SystemDownDisplayEvent.SHOW).dispatch();
+		if($event.instruction == <%= nameSpace %>.SystemDownDisplayEvent.HIDE)
+			new <%= nameSpace %>.SystemDownDisplayEvent(<%= nameSpace %>.SystemDownDisplayEvent.HIDE).dispatch();
+	}
+
+	p.toString = function (){
+		return '[SystemDownCommand]';
+	};
+	
+    <%= nameSpace %>.SystemDownCommand = SystemDownCommand;
+}());

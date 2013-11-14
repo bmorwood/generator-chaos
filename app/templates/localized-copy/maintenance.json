@@ -1,0 +1,52 @@
+[{"localized_messaging_section":{
+    "key":"en_US",
+    "id":1,
+    "description": "Country: United States; Language: English",
+        "fields":[{"localized_messaging_field":{
+            "id":1,
+            "localized_messaging_section_id":1,
+            "key":"hd1",
+            "value":"system down",
+            "locale_id":1
+        }},
+            {"localized_messaging_field":{
+            "id":2,
+            "localized_messaging_section_id":1,
+            "key":"hd2",
+            "value":"system down 2",
+            "locale_id":1
+        }},
+            {"localized_messaging_field":{
+                "id":3,
+                "localized_messaging_section_id":1,
+                "key":"button",
+                "value":"press me",
+                "locale_id":1
+            }}]
+}},
+    {"localized_messaging_section":{
+        "key":"fr_CA",
+        "id":1,
+        "description": "Country: Canada; Language: French",
+        "fields":[{"localized_messaging_field":{
+            "id":1,
+            "localized_messaging_section_id":1,
+            "key":"hd1",
+            "value":"fr - system down",
+            "locale_id":1
+        }},
+            {"localized_messaging_field":{
+                "id":2,
+                "localized_messaging_section_id":1,
+                "key":"hd2",
+                "value":" fr - system down 2",
+                "locale_id":1
+            }},
+            {"localized_messaging_field":{
+                "id":3,
+                "localized_messaging_section_id":1,
+                "key":"button",
+                "value":"fr - press me",
+                "locale_id":1
+            }}]
+    }}]
