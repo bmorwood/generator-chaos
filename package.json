@@ -1,15 +1,15 @@
 {
   "name": "generator-chaos",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.1.0",
+  "description": "A generator using Yeoman for chaos",
   "keywords": [
     "yeoman-generator"
   ],
   "homepage": "https://github.com/bmorwood/generator-chaos",
   "bugs": "https://github.com/bmorwood/generator-chaos/issues",
   "author": {
-    "name": "",
-    "email": "",
+    "name": "Barry Morwood",
+    "email": "bmorwood@gmail.com",
     "url": "https://github.com/bmorwood"
   },
   "main": "app/index.js",

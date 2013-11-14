@@ -1,6 +1,6 @@
 # generator-chaos [![Build Status](https://secure.travis-ci.org/bmorwood/generator-chaos.png?branch=master)](https://travis-ci.org/bmorwood/generator-chaos)
 
-A generator for [Yeoman](http://yeoman.io).
+[![NPM](https://nodei.co/npm/generator-chaos.png)](https://nodei.co/npm/generator-chaos)
 
 
 ## Getting Started
