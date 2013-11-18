@@ -23,14 +23,8 @@
 	};
 	
 	p.success = function ($event){
-
-		if(<%= nameSpace %>.LocalizationUtility.initialized)
-			LocalizationUtility.initInstance(this.localizationProxy.localizedContent);
-		else
-			<%= nameSpace %>.LocalizationUtility.repopulate(this.localizationProxy.localizedContent);
-
-		<%= nameSpace %>.LC.initialize();
-		this.$success($event);
+        <%= nameSpace %>.LC.initialize();
+        this.$success($event);
 	};
 
 	p.toString = function (){

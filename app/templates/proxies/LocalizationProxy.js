@@ -23,48 +23,61 @@
 	LocalizationProxy.DEFAULT_LOCALE_CODE = "en_us";
 	
 	var p = LocalizationProxy.prototype;
-	
-	p.locales;
-	p.localizedContent;
-	p.sections;
-	p.sectionsHash;
-	p.envConfig;
-	p.service;
+
+    p.localeData;
+    p.options;
 	
 	p.initialize = function (){
-		this.appSettings = <%= nameSpace %>.AppSettings.getInstance();
-		this.service = <%= nameSpace %>.LocalizationService.getInstance();
-		this.locales = [];
-		this.localizedContent = [];
-		this.sections = [];
-		this.sectionsHash = [];
+        this.appSettings = <%= nameSpace %>.AppSettings.getInstance();
+
+        this.options = {
+        lng: LocalizationProxy.DEFAULT_LOCALE_CODE ,
+        lowerCaseLng:true,
+        resGetPath: 'locales/__lng__/__ns__.json'
+        };
 	};
 	
 	p.loadLocalizedContent = function ($locale){
-		
-		var localeCode;
 
-		if($locale)
-			localeCode = $locale;
-		else
-			localeCode = <%= nameSpace %>.AppProperties.getInstance().locale || LocalizationProxy.DEFAULT_LOCALE_CODE;
-		
-		var scope = this;
-		this.service.getLocalizedContent(localeCode, function ($event){scope.handleLoadLocalizedContentSuccess($event);}, function ($event){scope.handleLoadLocalizedContentFault($event);} );
+        var localeCode;
+
+        if($locale)
+            localeCode = $locale;
+        else
+            localeCode = <%= nameSpace %>.AppProperties.getInstance().locale || LocalizationProxy.DEFAULT_LOCALE_CODE;
+
+        this.options.lng = localeCode;
+
+        var scope = this;
+
+        i18n.init(this.options, function($data) {
+            scope.handleLoadLocalizedContentSuccess($data)
+        });
 	};
-	
-	p.handleLoadLocalizedContentSuccess = function($event){
 
-		var result = $event;
-		
-		var sections = [];
-		
-		for (var i = result.length - 1; i >= 0; i--){
-			sections.push(<%= nameSpace %>.LocalizedSection.deserialize(result[i]));
-		}
-		
-		this.localizedContent = sections;
-		
+    p.loadLocalizedContentSystemDown = function ($locale){
+
+        var localeCode;
+
+        if($locale)
+            localeCode = $locale;
+        else
+            localeCode = <%= nameSpace %>.AppProperties.getInstance().locale || LocalizationProxy.DEFAULT_LOCALE_CODE;
+
+        this.options.lng = localeCode;
+
+        var scope = this;
+
+        i18n.init(this.options, function($data) {
+            scope.handleLoadLocalizedContentSuccess($data)
+        });
+
+    };
+	
+	p.handleLoadLocalizedContentSuccess = function($data){
+
+		this.localeData = $data;
+
 		new <%= nameSpace %>.LocalizationProxyEvent(<%= nameSpace %>.LocalizationProxyEvent.LOAD_LOCALIZATION_CONTENT_SUCCESS).dispatch();
 	};
 

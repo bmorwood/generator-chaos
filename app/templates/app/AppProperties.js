@@ -23,7 +23,7 @@
 	var p = AppProperties.prototype;
 
     p.serviceBaseURL;
-    p.locale = 'en_US';
+    p.locale = 'en-us';
 	
 	p.initialize = function (){};
 

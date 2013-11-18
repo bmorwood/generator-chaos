@@ -36,38 +36,20 @@
 	};
 	
 	p.handleShowSystemDown = function($event){
-		
-		var url = 'localized-copy/maintenance.json';
 
-		var scope = this;
-		
-		$.get(url, function($data){
-			scope.handleDataSuccess($data);
-		});
+        <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.LocalizationProxyEvent.LOAD_LOCALIZATION_CONTENT_SUCCESS, this.handleDataSuccess, this );
+        <%= nameSpace %>.LocalizationProxy.getInstance().loadLocalizedContentSystemDown();
 	};
 	
 	p.handleDataSuccess = function($data){
-		var locale = <%= nameSpace %>.AppProperties.getInstance().locale.toUpperCase();
-
-        if(typeof $data === 'string')
-            $data = JSON.parse( $data )
-
-        var result = $data;
-
-        var sections = [];
-
-        for (var i = result.length - 1; i >= 0; i--){
-            sections.push(<%= nameSpace %>.LocalizedSection.deserialize(result[i]));
-        }
-
-        <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.LocalizationEvent.REPOPULATED, this.contentReady, this);
-        <%= nameSpace %>.LocalizationUtility.repopulate(sections);
+        <%= nameSpace %>.EventDispatcher.getInstance().removeEventListener(<%= nameSpace %>.LocalizationProxyEvent.LOAD_LOCALIZATION_CONTENT_SUCCESS, this.handleDataSuccess, this );
+        <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.contentReady, this);
+        <%= nameSpace %>.LC.initialize();
 	};
 
     p.contentReady = function(){
 
-        <%= nameSpace %>.EventDispatcher.getInstance().removeEventListener(<%= nameSpace %>.LocalizationEvent.REPOPULATED, this.contentReady, this);
-        <%= nameSpace %>.LC.initialize();
+    <%= nameSpace %>.EventDispatcher.getInstance().removeEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.contentReady, this);
 
         if(<%= nameSpace %>.LC.SYSTEM_DOWN_H1 !== ''){
             this.h1Txt(<%= nameSpace %>.LC.SYSTEM_DOWN_H1);

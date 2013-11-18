@@ -51,7 +51,7 @@ ChaosGenerator.prototype.app = function app() {
 
     this.mkdir('css');
 
-    this.mkdir('localized-copy');
+    this.mkdir('locales');
 
     this.copy('_bower.json', 'bower.json');
     this.copy('_gitignore', '.gitignore');
@@ -64,10 +64,10 @@ ChaosGenerator.prototype.app = function app() {
 ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('jshintrc', '.jshintrc');
 
-    this.copy('localized-copy/maintenance.json', 'localized-copy/maintenance.json');
-    this.copy('localized-copy/en_US.json', 'localized-copy/en_US.json');
-    this.copy('localized-copy/en_US.json', 'localized-copy/en_CA.json');
-    this.copy('localized-copy/fr_CA.json', 'localized-copy/fr_CA.json');
+    this.copy('locales/dev/translation.json', 'locales/dev/translation.json');
+    this.copy('locales/en/translation.json', 'locales/en/translation.json');
+    this.copy('locales/en-ca/translation.json', 'locales/en-ca/translation.json');
+    this.copy('locales/en-us/translation.json', 'locales/en-us/translation.json');
 
     this.template('index.html', 'index.html');
     this.template('index.js', 'app/index.js');
@@ -101,16 +101,11 @@ ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.template('localization/LC.js', 'app/localization/LC.js');
     this.template('localization/LocalizationUtility.js', 'app/localization/LocalizationUtility.js');
 
-    this.template('models/localization/Locale.js', 'app/models/localization/Locale.js');
-    this.template('models/localization/LocalizedField.js', 'app/models/localization/LocalizedField.js');
-    this.template('models/localization/LocalizedSection.js', 'app/models/localization/LocalizedSection.js');
-
     this.template('orchestrators/InitializationSequenceOrchestrator.js', 'app/orchestrators/InitializationSequenceOrchestrator.js');
 
     this.template('proxies/LocalizationProxy.js', 'app/proxies/LocalizationProxy.js');
 
     this.template('services/AbstractService.js', 'app/services/AbstractService.js');
-    this.template('services/LocalizationService.js', 'app/services/LocalizationService.js');
     this.template('services/ServiceLocator.js', 'app/services/ServiceLocator.js');
 
     this.template('viewModels/OverlayContainerWindow.js', 'app/viewModels/OverlayContainerWindow.js');

@@ -25,6 +25,7 @@ module.exports = function(grunt) {
                     'bower_components/greensock-js/src/uncompressed/**/*.js',
                     'bower_components/knockout/build/output/knockout-latest.js',
                     'bower_components/modernizr/modernizr.js',
+                    'bower_components/i18next/release/i18next-1.7.1.js',
                     'app/index.js',
                     'app/**/*.js'],
                 dest: '<%= pkg.buildPath %>js/<%= pkg.name %>.min.js'
@@ -47,7 +48,8 @@ module.exports = function(grunt) {
                 files: [
                     {src: 'index.html', dest: '<%= pkg.buildPath %>'},
                     {src: 'css/img/**/*', dest: '<%= pkg.buildPath %>'},
-                    {src: 'localized-copy/*', dest: '<%= pkg.buildPath %>'}
+                    {src: 'localized-copy/*', dest: '<%= pkg.buildPath %>'},
+                    {src: 'locales/**/*', dest: '<%= pkg.buildPath %>'}
                 ]
             },
             release: {
