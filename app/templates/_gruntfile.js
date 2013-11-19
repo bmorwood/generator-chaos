@@ -1,4 +1,16 @@
+var LIVERELOAD_PORT = 35729;
+var SERVER_PORT = 9000;
+var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
+
 module.exports = function(grunt) {
+
+    // show elapsed time at the end
+    require('time-grunt')(grunt);
+    // load all grunt tasks
+    require('load-grunt-tasks')(grunt);
 
     // Project configuration.
     grunt.initConfig({
@@ -38,9 +50,9 @@ module.exports = function(grunt) {
                 compress: true
             },
             base:{
-               files: {
-                   '<%= pkg.buildPath %>css/default.css': 'css/default.less'
-               }
+                files: {
+                    '<%= pkg.buildPath %>css/default.css': 'css/default.less'
+                }
             }
         },
         copy: {
@@ -48,7 +60,6 @@ module.exports = function(grunt) {
                 files: [
                     {src: 'index.html', dest: '<%= pkg.buildPath %>'},
                     {src: 'css/img/**/*', dest: '<%= pkg.buildPath %>'},
-                    {src: 'localized-copy/*', dest: '<%= pkg.buildPath %>'},
                     {src: 'locales/**/*', dest: '<%= pkg.buildPath %>'}
                 ]
             },
@@ -91,34 +102,42 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['<%= concat.core.src %>', '*.html', 'app/**/*.html'],
-            tasks: ['build']
+            livereload: {
+                options: {
+                    livereload: LIVERELOAD_PORT
+                },
+                files: ['<%= concat.core.src %>', '*.html', 'app/**/*.html'],
+            }
         },
         connect: {
-            server: {
+            options: {
+                port: SERVER_PORT,
+                base: 'build/',
+                hostname: 'localhost',
+                livereload: LIVERELOAD_PORT
+            },
+            server:{},
+            livereload: {
                 options: {
-                    port: 9001,
-                    base: 'build/',
-                    keepalive: true
+                    middleware: function (connect) {
+                        return [
+                            lrSnippet,
+                            mountFolder(connect, 'build')
+                        ];
+                    }
                 }
+            }
+        },
+        open: {
+            server: {
+                path: 'http://127.0.0.1:<%= connect.options.port %>/index.html'
             }
         }
     });
 
-    // Load the plugin that provides the 'uglify' task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-handlebars');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-
     // Default task(s).
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('build', ['clean:build', 'copy:main', 'concat', 'less', 'handlebars']);
+    grunt.registerTask('build', ['clean:build', 'copy:main', 'concat', 'less', 'handlebars', 'connect:server', 'open', 'watch']);
     grunt.registerTask('release', function (){
         var tasks = ['build', 'clean:release', 'imagemin', 'uglify', 'htmlmin', 'copy:release'];
         grunt.option('force', true);

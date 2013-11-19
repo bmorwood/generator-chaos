@@ -35,6 +35,18 @@ Finally, initiate the generator:
 $ yo chaos
 ```
 
+### Create Entities
+```
+$ yo chaos:entity [name]
+```
+
+this will bring up a list, you can select any combination you want.
+
+### Included
+
+* localization: http://i18next.com
+
+
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
