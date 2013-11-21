@@ -63,11 +63,13 @@ EntityGenerator.prototype.askFor = function askFor() {
 
 EntityGenerator.prototype.files = function files() {
 
-    this.name = this._.capitalize(this.name);
+    var _name = this._.capitalize(this.name);
 
     for(var i = 0; i < this.entities.length; i++){
         var _entity = this.entities[i];
-        _entity.entityName = _entity.entityName.replace('<name>', this.name);
+        _entity.entityName = _entity.entityName.replace('<name>', _name);
+
+        this.name = _entity.entityName;
         this.template(_entity.file, _entity.dir + _entity.saveAs.replace('<entityName>', _entity.entityName));
     }
 };
