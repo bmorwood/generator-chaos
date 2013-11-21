@@ -1,5 +1,10 @@
 (function(){
-
+    /**
+     * singleton of <%= name %>.
+     *
+     * @class <%= name %>
+     * @constructor
+     */
     var <%= name %> = function() {
         if (<%= name %>.instance===null) {
             <%= name %>.instance = this;
@@ -10,7 +15,21 @@
     };
 
 
+    /**
+    * instance is the class, this is used for singleton classes.
+    *
+    * @property instance
+    * @type {Object}
+    * @default null
+    */
     <%= name %>.instance = null;
+
+    <%= name %>.getInstance = function (){
+        if(<%= name %>.instance === null){
+        <%= name %>.instance = new <%= name %>();
+        }
+    return <%= name %>.instance;
+    };
 
     <%= name %>.getInstance = function (){
         if(<%= name %>.instance===null){
@@ -21,11 +40,21 @@
 
     var p = <%= name %>.prototype;
 
+    /**
+    * initialize is called after the constructor is created.
+    *
+    * @method initialize
+    */
     p.initialize = function (){ };
 
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
     p.toString = function (){
-        return "[<%= name %>]";
+        return "<%= name %>";
     };
 
     <%= nameSpace %>.<%= name %> = <%= name %>;

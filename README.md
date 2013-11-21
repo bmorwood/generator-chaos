@@ -45,6 +45,7 @@ this will bring up a list, you can select any combination you want.
 ### Included
 
 * localization: http://i18next.com
+* code documentation using http://yui.github.io/yuidoc/
 
 
 ### Getting To Know Yeoman

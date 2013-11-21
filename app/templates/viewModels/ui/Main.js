@@ -50,7 +50,7 @@
     };
 
     p.toString = function (){
-        return '[Main]';
+        return 'Main';
     };
 
     <%= nameSpace %>.Main = Main;

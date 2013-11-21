@@ -132,6 +132,18 @@ module.exports = function(grunt) {
             server: {
                 path: 'http://127.0.0.1:<%= connect.options.port %>/index.html'
             }
+        },
+        yuidoc: {
+            options: {
+                paths: 'app/',
+                outdir: 'docs/'
+            },
+            dist: {
+                name: '<%= pkg.name %>',
+                description: '<%= pkg.description %>',
+                version: '0',
+                url: 'website.com'
+            }
         }
     });
 
@@ -139,7 +151,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['build']);
     grunt.registerTask('build', ['clean:build', 'copy:main', 'concat', 'less', 'handlebars', 'connect:server', 'open', 'watch']);
     grunt.registerTask('release', function (){
-        var tasks = ['build', 'clean:release', 'imagemin', 'uglify', 'htmlmin', 'copy:release'];
+        var tasks = ['build', 'yuidoc', 'clean:release', 'imagemin', 'uglify', 'htmlmin', 'copy:release'];
         grunt.option('force', true);
         grunt.task.run(tasks);
     });
