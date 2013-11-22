@@ -63,7 +63,12 @@
 	var p = LocalizationUtility.prototype;
 	
 	p.initialize = function (){};
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
 		return '[LocalizationUtility]';
 	};

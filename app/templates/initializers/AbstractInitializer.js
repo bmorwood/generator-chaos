@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * initializer of AbstractInitializer.
+     *
+     * @class AbstractInitializer
+     * @constructor
+     */
 	var AbstractInitializer = function() {};
 	
 	var p = AbstractInitializer.prototype;
@@ -11,19 +16,19 @@
 	p.$initialize = function ($name, $successEventName, $faultEventName){
 		this.name = $name;
 
-		this.successEventName = $successEventName||"";
-		this.faultEventName = $faultEventName||"";
+		this.successEventName = $successEventName||'';
+		this.faultEventName = $faultEventName||'';
 		
-		if (this.successEventName != "")
+		if (this.successEventName != '')
             <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(this.successEventName, this.success, this);
 			
-		if (this.faultEventName != "")
+		if (this.faultEventName != '')
             <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(this.faultEventName, this.fault, this);
 	};
 	
 	p.$execute = function (){
-		if (this.successEventName === "" && this.faultEventName === ""){
-			<%= nameSpace %>.logger.info("Initializer: " + this.name + " executed.");
+		if (this.successEventName === '' && this.faultEventName === ''){
+			<%= nameSpace %>.logger.info('Initializer: ' + this.name + ' executed.');
 			new <%= nameSpace %>.InitializerSuccessEvent(this.name).dispatch();
 		}	
 	};
@@ -34,7 +39,7 @@
 	
 	p.$success = function($event){
 		this.removeCompletionListeners();
-        <%= nameSpace %>.logger.info("Initializer: " + this.name + " succeeded.");
+        <%= nameSpace %>.logger.info('Initializer: ' + this.name + ' succeeded.');
 		new <%= nameSpace %>.InitializerSuccessEvent(this.name).dispatch();
 	};
 	
@@ -44,7 +49,7 @@
 	
 	p.$fault = function($event) {
 		this.removeCompletionListeners();
-        <%= nameSpace %>.logger.error("Initializer: " + this.name + " failed.");
+        <%= nameSpace %>.logger.error('Initializer: ' + this.name + ' failed.');
 		new <%= nameSpace %>.InitializerFaultEvent(this.name).dispatch();
 	};
 	
@@ -71,10 +76,15 @@
         <%= nameSpace %>.EventDispatcher.getInstance().removeEventListener(this.successEventName, this.success, this);
         <%= nameSpace %>.EventDispatcher.getInstance().removeEventListener(this.faultEventName, this.fault, this);
 	};
-	
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return "[AbstractInitializer]";
+		return 'AbstractInitializer';
 	};
 
     <%= nameSpace %>.AbstractInitializer = AbstractInitializer;

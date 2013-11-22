@@ -15,9 +15,14 @@
 	p.isModal;
 	p.y;
 	p.x;
-
+    /**
+     * toString returns the class name.
+     *
+     * @method toString
+     * @return {String} Class name.
+     */
 	p.toString = function (){
-		return '[OverlayContainerWindow]';
+		return 'OverlayContainerWindow';
 	};
 
     <%= nameSpace %>.OverlayContainerWindow = OverlayContainerWindow;

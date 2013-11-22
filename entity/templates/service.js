@@ -3,6 +3,7 @@
      * service of <%= name %>.
      *
      * @class <%= name %>
+     * @extends <%= nameSpace %>.AbstractService
      * @constructor
      */
     var <%= name %> = function() {

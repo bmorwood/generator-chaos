@@ -5,7 +5,7 @@
 			LocalizationProxy.instance = this;
 			this.initialize();
 		}else{
-			<%= nameSpace %>.logger.error("You should not call the constructor for " + this.toString() + " directly.  It is a singleton, so you should use getInstance()");
+			<%= nameSpace %>.logger.error('You should not call the constructor for ' + this.toString() + ' directly.  It is a singleton, so you should use getInstance()');
 		}
 	};
 
@@ -20,7 +20,7 @@
 		return LocalizationProxy.instance;
 	};
 	
-	LocalizationProxy.DEFAULT_LOCALE_CODE = "en_us";
+	LocalizationProxy.DEFAULT_LOCALE_CODE = 'en_us';
 	
 	var p = LocalizationProxy.prototype;
 
@@ -84,9 +84,14 @@
 	p.handleLoadLocalizedContentFault = function($event){
 		new <%= nameSpace %>.LocalizationProxyEvent(<%= nameSpace %>.LocalizationProxyEvent.LOAD_LOCALIZATION_CONTENT_FAULT).dispatch();
 	};
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return "[LocalizationProxy]";
+		return '[LocalizationProxy]';
 	};
 	
 <%= nameSpace %>.LocalizationProxy = LocalizationProxy;

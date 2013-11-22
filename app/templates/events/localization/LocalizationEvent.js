@@ -1,18 +1,34 @@
 (function(){
-
+    /**
+     * event of LocalizationEvent.
+     *
+     * @class LocalizationEvent
+     * @extends <%= nameSpace %>.AbstractEvent
+     * @constructor
+     */
     var LocalizationEvent = function($type, $params) {
         this.params = $params || null;
         this.type = $type;
     };
 
-    LocalizationEvent.REPOPULATED = "ns.localizationevent:repopulated";
-    LocalizationEvent.LOCALIZATION_CONTENT_READY = "ns.localizationevent:localization.contentcready";
+    /**
+     * Fired when an sample event occurs...
+     *
+     * @event REPOPULATED
+     **/
+    LocalizationEvent.REPOPULATED = "<%= nameSpace.toLowerCase() %>.localizationevent::repopulated";
+    /**
+     * Fired when an sample event occurs...
+     *
+     * @event LOCALIZATION_CONTENT_READY
+     **/
+    LocalizationEvent.LOCALIZATION_CONTENT_READY = "<%= nameSpace.toLowerCase() %>.localizationevent::localization.contentcready";
 
     var p = LocalizationEvent.prototype = new <%= nameSpace %>.AbstractEvent();
     p.constructor = LocalizationEvent;
 
     p.toString = function (){
-        return "[LocalizationEvent]";
+        return 'LocalizationEvent';
     };
 
     <%= nameSpace %>.LocalizationEvent = LocalizationEvent;

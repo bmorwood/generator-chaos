@@ -5,7 +5,7 @@
      * @class <%= name %>
      * @param {String} $type
      * @constructor
-     * @extends AbstractEvent
+     * @extends <%= nameSpace %>.AbstractEvent
      */
     var <%= name %> = function($type) {
         this.initialize();

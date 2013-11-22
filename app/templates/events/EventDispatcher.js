@@ -1,5 +1,11 @@
 (function(){
-	
+    /**
+     * service of EventDispatcher.
+     *
+     * @class EventDispatcher
+     * @extends <%= nameSpace %>.AbstractService
+     * @constructor
+     */
 	var EventDispatcher = function($target) {
 		this.target = $target;
 		this.events = [];

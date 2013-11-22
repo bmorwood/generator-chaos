@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * initializer of LocalizationInitializer.
+     *
+     * @class LocalizationInitializer
+     * @constructor
+     */
 	var LocalizationInitializer = function() {
 		this.initialize();
 	};
@@ -27,8 +32,14 @@
         this.$success($event);
 	};
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[LocalizationInitializer]';
+		return 'LocalizationInitializer';
 	};
 	
 <%= nameSpace %>.LocalizationInitializer = LocalizationInitializer;

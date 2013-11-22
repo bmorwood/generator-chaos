@@ -14,7 +14,7 @@
 	p.$initServiceWithConfig = function ($url, $success, $fault) {
 		$.get($url, function ($data) {
 
-			if(typeof $data === "string")
+			if(typeof $data === 'string')
 				$data = JSON.parse($data);
 				
 			$success($data);
@@ -38,9 +38,14 @@
 	};
 	
 	p.initialize = function () { };
-
+    /**
+     * toString returns the class name.
+     *
+     * @method toString
+     * @return {String} Class name.
+     */
 	p.toString = function () {
-		return "[AbstractService]";
+		return 'AbstractService';
 	};
 
     <%= nameSpace %>.AbstractService = AbstractService;

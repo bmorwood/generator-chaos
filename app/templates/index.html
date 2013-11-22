@@ -14,7 +14,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div id="<%= nameSpace %>-container"></div>
+        <div id="<%= nameSpace.toLowerCase() %>-container"></div>
 
         <script src="js/project.min.js"></script>
         <script src="js/template-data.js"></script>
@@ -22,7 +22,8 @@
         <script>
             var project = new <%= nameSpace %>({
                 width:600,
-                height:400
+                height:400,
+                container: '<%= nameSpace.toLowerCase() %>-container'
             });
 
             project.init();

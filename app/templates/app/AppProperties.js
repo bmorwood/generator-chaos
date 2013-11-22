@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * singleton of AppProperties.
+     *
+     * @class AppProperties
+     * @constructor
+     */
 	var AppProperties = function() {
 		if (AppProperties.instance===null) {
 			AppProperties.instance = this;
@@ -9,8 +14,20 @@
 		}
 	};
 
+    /**
+    * instance is the class, this is used for singleton classes.
+    *
+    * @property instance
+    * @type {Object}
+    * @default null
+    */
 	AppProperties.instance = null;
 
+    /**
+    * getInstance is called to get the single instance of this class.
+    *
+    * @method getInstance
+    */
 	AppProperties.getInstance = function (){
 		
 		if(AppProperties.instance===null){
@@ -32,8 +49,14 @@
         new <%= nameSpace %>.AppConfigEvent(<%= nameSpace %>.AppConfigEvent.CONFIG_READY).dispatch();
     };
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[AppProperties]';
+		return 'AppProperties';
 	};
 
     <%= nameSpace %>.AppProperties = AppProperties;

@@ -1,18 +1,45 @@
 (function(){
-
+    /**
+     * event of AppConfigEvent.
+     *
+     * @class AppConfigEvent
+     * @extends <%= nameSpace %>.AbstractEvent
+     * @constructor
+     */
 	var AppConfigEvent = function($type) {
 		this.type = $type;
 	};
 
-	AppConfigEvent.CONFIG_READY = 'ns.appconfigevent:config.ready';
-	AppConfigEvent.CONFIG_ERROR = 'ns.appconfigevent:config.error';
-	AppConfigEvent.CONFIG_LOAD = 'ns.appconfigevent:config.load';
+    /**
+     * Fired when an sample event occurs...
+     *
+     * @event CONFIG_READY
+     **/
+	AppConfigEvent.CONFIG_READY = '<%= nameSpace.toLowerCase() %>.appconfigevent::config.ready';
+    /**
+     * Fired when an sample event occurs...
+     *
+     * @event CONFIG_ERROR
+     **/
+	AppConfigEvent.CONFIG_ERROR = '<%= nameSpace.toLowerCase() %>.appconfigevent::config.error';
+    /**
+     * Fired when an sample event occurs...
+     *
+     * @event CONFIG_LOAD
+     **/
+	AppConfigEvent.CONFIG_LOAD = '<%= nameSpace.toLowerCase() %>.appconfigevent::config.load';
 
 	var p = AppConfigEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = AppConfigEvent;
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[AppConfigEvent]';
+		return 'AppConfigEvent';
 	};
 
     <%= nameSpace %>.AppConfigEvent = AppConfigEvent;

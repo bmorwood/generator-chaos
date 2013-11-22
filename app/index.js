@@ -64,6 +64,8 @@ ChaosGenerator.prototype.app = function app() {
 ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('jshintrc', '.jshintrc');
 
+
+
     this.copy('locales/dev/translation.json', 'locales/dev/translation.json');
     this.copy('locales/en/translation.json', 'locales/en/translation.json');
     this.copy('locales/en-ca/translation.json', 'locales/en-ca/translation.json');
@@ -73,10 +75,15 @@ ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.template('index.js', 'app/index.js');
     this.template('_package.json', 'package.json');
 
+
+
     this.template('app/AppProperties.js', 'app/app/AppProperties.js');
+
     this.template('app/AppSettings.js', 'app/app/AppSettings.js');
 
     this.template('commands/system/SystemDownCommand.js', 'app/commands/system/SystemDownCommand.js');
+
+
 
     this.template('controllers/AbstractController.js', 'app/controllers/AbstractController.js');
     this.template('controllers/Controller.js', 'app/controllers/Controller.js');
@@ -93,6 +100,8 @@ ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.template('events/preloader/PreloaderEvent.js', 'app/events/preloader/PreloaderEvent.js');
     this.template('events/system/SystemDownDisplayEvent.js', 'app/events/system/SystemDownDisplayEvent.js');
     this.template('events/system/SystemDownEvent.js', 'app/events/system/SystemDownEvent.js');
+
+
 
     this.template('initializers/AbstractInitializer.js', 'app/initializers/AbstractInitializer.js');
     this.template('initializers/AppConfigurationInitializer.js', 'app/initializers/AppConfigurationInitializer.js');

@@ -76,9 +76,14 @@
 		this.currentPercent = 0;
         $('#<%= nameSpace.toLowerCase() %>-preloader-bar').css({width: '0%'});
 	};
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[PreloaderViewModel]';
+		return 'PreloaderViewModel';
 	};
 
     <%= nameSpace %>.PreloaderViewModel = PreloaderViewModel;

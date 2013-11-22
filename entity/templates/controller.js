@@ -4,6 +4,7 @@
      *
      * @class <%= name %>
      * @constructor
+     * @extends <%= nameSpace %>.AbstractController
      */
     var <%= name %> = function() {
         if (<%= name %>.instance===null) {

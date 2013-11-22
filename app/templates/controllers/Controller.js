@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * controller of Controller.
+     *
+     * @class Controller
+     * @constructor
+     */
 	var Controller = function() {
 		if (Controller.instance===null) {
 			Controller.instance = this;
@@ -9,8 +14,20 @@
 		}
 	};
 
+    /**
+    * instance is the class, this is used for singleton classes.
+    *
+    * @property instance
+    * @type {Object}
+    * @default null
+    */
 	Controller.instance = null;
 
+    /**
+    * getInstance is called to get the single instance of this class.
+    *
+    * @method getInstance
+    */
 	Controller.getInstance = function (){
 		if(Controller.instance===null){
 			Controller.instance = new Controller();
@@ -30,9 +47,15 @@
 	p.initialize = function (){ 
 		//this.addCommand(UPDATE_SWF_ADDRESS_EVENT, UpdateSwfAddressCommand); //reacts to changes 
 	};
-	
+
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[Controller]';
+		return 'Controller';
 	};
 
     <%= nameSpace %>.Controller = Controller;

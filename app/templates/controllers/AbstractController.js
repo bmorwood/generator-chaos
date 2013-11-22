@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * singleton of AbstractController.
+     *
+     * @class AbstractController
+     * @constructor
+     */
 	var AbstractController = function() { 
 		this.initialize();
 	};
@@ -36,8 +41,14 @@
 		}
 	};
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[AbstractController]';
+		return 'AbstractController';
 	};
 
     <%= nameSpace %>.AbstractController = AbstractController;

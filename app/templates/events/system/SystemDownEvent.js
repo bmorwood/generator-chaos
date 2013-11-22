@@ -5,15 +5,20 @@
 		this.type = SystemDownEvent.SYSTEM_DOWN;
 	};
 	
-	SystemDownEvent.SYSTEM_DOWN = "system_down";
+	SystemDownEvent.SYSTEM_DOWN = '<%= nameSpace.toLowerCase() %>.systemdownevent::systemdown';
 
 	var p = SystemDownEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = SystemDownEvent;
 	
 	p.instruction;
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return "[SystemDownEvent]";
+		return 'SystemDownEvent';
 	};
 	
 <%= nameSpace %>.SystemDownEvent = SystemDownEvent;

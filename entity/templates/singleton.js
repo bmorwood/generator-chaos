@@ -14,7 +14,6 @@
         }
     };
 
-
     /**
     * instance is the class, this is used for singleton classes.
     *
@@ -24,18 +23,16 @@
     */
     <%= name %>.instance = null;
 
+    /**
+    * getInstance is called to get the single instance of this class.
+    *
+    * @method getInstance
+    */
     <%= name %>.getInstance = function (){
         if(<%= name %>.instance === null){
         <%= name %>.instance = new <%= name %>();
         }
     return <%= name %>.instance;
-    };
-
-    <%= name %>.getInstance = function (){
-        if(<%= name %>.instance===null){
-            <%= name %>.instance = new <%= name %>();
-        }
-        return <%= name %>.instance;
     };
 
     var p = <%= name %>.prototype;

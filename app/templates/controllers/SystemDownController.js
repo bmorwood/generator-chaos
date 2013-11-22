@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * controller of SystemDownController.
+     *
+     * @class SystemDownController
+     * @constructor
+     */
 	var SystemDownController = function() {
 		
 		if (SystemDownController.instance===null) {
@@ -10,8 +15,20 @@
 		}
 	};
 
+    /**
+    * instance is the class, this is used for singleton classes.
+    *
+    * @property instance
+    * @type {Object}
+    * @default null
+    */
 	SystemDownController.instance = null;
 
+    /**
+    * getInstance is called to get the single instance of this class.
+    *
+    * @method getInstance
+    */
 	SystemDownController.getInstance = function (){
 		if(SystemDownController.instance===null){
 			SystemDownController.instance = new SystemDownController();
@@ -25,9 +42,15 @@
 	p.initialize = function (){
 		this.addCommand(<%= nameSpace %>.SystemDownEvent.SYSTEM_DOWN, <%= nameSpace %>.SystemDownCommand); //reacts to changes
 	};
-	
+
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[SystemDownController]';
+		return 'SystemDownController';
 	};
 
     <%= nameSpace %>.SystemDownController = SystemDownController;

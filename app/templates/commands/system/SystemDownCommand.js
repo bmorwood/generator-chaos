@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * command of SystemDownCommand.
+     *
+     * @class SystemDownCommand
+     * @constructor
+     */
 	var SystemDownCommand = function() {
 		this.initialize();
 	};

@@ -48,7 +48,12 @@
     p.dispose = function (){
         $('#' + this.id).remove();
     };
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
     p.toString = function (){
         return 'Main';
     };

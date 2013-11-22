@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * initializer of AppConfigurationInitializer.
+     *
+     * @class AppConfigurationInitializer
+     * @constructor
+     */
 	var AppConfigurationInitializer = function() {
 		this.initialize();
 	};
@@ -23,8 +28,14 @@
         <%= nameSpace %>.AppProperties.getInstance().init();
 	};
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[AppConfigurationInitializer]';
+		return 'AppConfigurationInitializer';
 	};
 	
     <%= nameSpace %>.AppConfigurationInitializer = AppConfigurationInitializer;

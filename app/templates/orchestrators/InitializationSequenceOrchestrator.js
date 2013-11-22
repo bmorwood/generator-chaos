@@ -5,7 +5,7 @@
 			InitializationSequenceOrchestrator.instance = this;
 			this.initialize();
 		}else{
-			<%= nameSpace %>.logger.error("You should not call the constructor for " + this.toString() + " directly.  It is a singleton, so you should use getInstance()");
+			<%= nameSpace %>.logger.error('You should not call the constructor for ' + this.toString() + ' directly.  It is a singleton, so you should use getInstance()');
 		}
 	};
 
@@ -39,7 +39,7 @@
         <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.InitializerSuccessEvent.SUCCESS, this.handleInitializerSuccess, this);
         <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.InitializerFaultEvent.FAULT, this.handleInitializerFault, this);
 
-		<%= nameSpace %>.logger.info("beginning initialization...");
+		<%= nameSpace %>.logger.info('beginning initialization...');
 		this.queue = _.clone(this.MASTER_SEQUENCE).reverse(); //reverse because we're going to use pop() method later
 		this.next();
 	};
@@ -51,7 +51,7 @@
 			new <%= nameSpace %>.PreloaderEvent(<%= nameSpace %>.PreloaderEvent.STEP, pctComplete).dispatch();
 			
 			var nextItem = this.queue.pop();
-			<%= nameSpace %>.logger.info("Executing initializer: " + nextItem.toString());
+			<%= nameSpace %>.logger.info('Executing initializer: ' + nextItem.toString());
 			nextItem.execute();
 		}else{			
 			if (!this.initializationComplete) {
@@ -74,9 +74,14 @@
 	p.handleInitializerFault = function($event){
 		new <%= nameSpace %>.SystemDownEvent(<%= nameSpace %>.SystemDownDisplayEvent.SHOW).dispatch();
 	};
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return "[InitializationSequenceOrchestrator]";
+		return 'InitializationSequenceOrchestrator';
 	};
 	
     <%= nameSpace %>.InitializationSequenceOrchestrator = InitializationSequenceOrchestrator;

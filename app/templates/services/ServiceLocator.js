@@ -71,8 +71,14 @@
 			return base.split('//')[1].toString().split('')[0].toString();
 	};
 
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[ServiceLocator]';
+		return 'ServiceLocator';
 	};
 	
 <%= nameSpace %>.ServiceLocator = ServiceLocator;
