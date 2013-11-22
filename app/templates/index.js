@@ -1,16 +1,23 @@
 (function($window){
+    /**
+     A utility that brokers HTTP requests...
 
+     @class <%= nameSpace %>
+     @constructor
+     **/
     var <%= nameSpace %> = function($params){
 
         var appSettings = <%= nameSpace %>.AppSettings.getInstance();
         appSettings.width = $params.width || appSettings.width;
         appSettings.height = $params.height || appSettings.height;
-        appSettings.rootContainer = $params.container || $('<div></div>', {
-            id:'ns-main-container',
+        appSettings.rootContainer = $params.container || $('<div></div>',{id:'<%= nameSpace %>-main-container'});
+
+        appSettings.rootContainer.css({
             width: appSettings.width,
             height: appSettings.height,
-            css:{position:'relative'}
+            position:'relative'
         });
+
 
         if(!$params.container)
             $(document.body).append(appSettings.rootContainer);

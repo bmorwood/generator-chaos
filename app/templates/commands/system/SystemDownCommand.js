@@ -20,9 +20,14 @@
 		if($event.instruction == <%= nameSpace %>.SystemDownDisplayEvent.HIDE)
 			new <%= nameSpace %>.SystemDownDisplayEvent(<%= nameSpace %>.SystemDownDisplayEvent.HIDE).dispatch();
 	}
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
 	p.toString = function (){
-		return '[SystemDownCommand]';
+		return 'SystemDownCommand';
 	};
 	
     <%= nameSpace %>.SystemDownCommand = SystemDownCommand;

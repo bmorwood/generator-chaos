@@ -16,7 +16,7 @@
      *
      * @event SUCCESS
      **/
-	InitializerSuccessEvent.SUCCESS = ''<%= nameSpace.toLowerCase() %>.initializersuccessevent::success'';
+	InitializerSuccessEvent.SUCCESS = '<%= nameSpace.toLowerCase() %>.initializersuccessevent::success';
 	
 	var p = InitializerSuccessEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = InitializerSuccessEvent;

@@ -58,7 +58,8 @@
     *
     * @method render
     * @param $src
-    */
+    * @required
+    * /
     p.render = function($src){
         this.elm = <%= nameSpace %>.templates['<%= name %>.html']();
         $src.append(this.elm);

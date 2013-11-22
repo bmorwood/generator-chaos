@@ -103,5 +103,15 @@
 		return false;
 	};
 
+	/**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
+	p.toString = function () {
+		return 'EventDispatcher';
+	};
+
     <%= nameSpace %>.EventDispatcher = EventDispatcher;
 }());

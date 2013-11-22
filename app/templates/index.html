@@ -20,13 +20,17 @@
         <script src="js/template-data.js"></script>
 
         <script>
-            var project = new <%= nameSpace %>({
-                width:600,
-                height:400,
-                container: '<%= nameSpace.toLowerCase() %>-container'
-            });
+            $(document).ready(function(){
 
-            project.init();
+                var project = new <%= nameSpace %>({
+                    width:600,
+                    height:400,
+                    container: $('#<%= nameSpace.toLowerCase() %>-container')
+                });
+
+                project.init();
+
+            });
         </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

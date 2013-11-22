@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * class of LocalizationProxy.
+     *
+     * @class LocalizationProxy
+     * @constructor
+     */
 	var LocalizationProxy = function() {
 		if (LocalizationProxy.instance===null) {
 			LocalizationProxy.instance = this;

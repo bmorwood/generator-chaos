@@ -1,5 +1,10 @@
 (function(){
-	
+    /**
+     * class of InitializationSequenceOrchestrator.
+     *
+     * @class InitializationSequenceOrchestrator
+     * @constructor
+     */
 	var InitializationSequenceOrchestrator = function() {
 		if (InitializationSequenceOrchestrator.instance===null) {
 			InitializationSequenceOrchestrator.instance = this;

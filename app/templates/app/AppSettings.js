@@ -44,9 +44,14 @@
     p.rootContainer;
 
     p.initialize = function (){};
-
+    /**
+    * toString returns the class name.
+    *
+    * @method toString
+    * @return {String} Class name.
+    */
     p.toString = function (){
-        return '[AppSettings]';
+        return 'AppSettings';
     };
 
     <%= nameSpace %>.AppSettings = AppSettings;

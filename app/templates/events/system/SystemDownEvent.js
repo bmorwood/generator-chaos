@@ -1,5 +1,11 @@
 (function(){
-	
+    /**
+     * service of SystemDownEvent.
+     *
+     * @class SystemDownEvent
+     * @extends <%= nameSpace %>.AbstractEvent
+     * @constructor
+     */
 	var SystemDownEvent = function($instruction) {
 		this.instruction = $instruction;
 		this.type = SystemDownEvent.SYSTEM_DOWN;
