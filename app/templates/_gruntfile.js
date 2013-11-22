@@ -39,7 +39,9 @@ module.exports = function(grunt) {
                     'bower_components/modernizr/modernizr.js',
                     'bower_components/i18next/release/i18next-1.7.1.js',
                     'app/index.js',
-                    'app/**/*.js'],
+                    'app/**/*.js',
+                    '.tmp/*.js',
+                ],
                 dest: '<%= pkg.buildPath %>js/<%= pkg.name %>.min.js'
             }
         },
@@ -97,7 +99,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'build/js/template-data.js': 'app/**/*.html'
+                    '.tmp/template-data.js': 'app/**/*.html'
                 }
             }
         },
@@ -149,7 +151,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('build', ['clean:build', 'copy:main', 'concat', 'less', 'handlebars', 'connect:server', 'open', 'watch']);
+    grunt.registerTask('build', ['clean:build', 'copy:main', 'handlebars', 'concat', 'less', 'connect:server', 'open', 'watch']);
     grunt.registerTask('release', function (){
         var tasks = ['build', 'yuidoc', 'clean:release', 'imagemin', 'uglify', 'htmlmin', 'copy:release'];
         grunt.option('force', true);
