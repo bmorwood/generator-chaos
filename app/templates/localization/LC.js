@@ -4,6 +4,7 @@
     *
     * @class LC
     * @constructor
+    * @namespace <%= nameSpace.toLowerCase() %>.localization
     */
     var LC = function() {
 

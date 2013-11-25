@@ -3,8 +3,9 @@
      * service of SystemDownDisplayEvent.
      *
      * @class SystemDownDisplayEvent
-     * @extends <%= nameSpace %>.AbstractService
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.system
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var SystemDownDisplayEvent = function($type) {
 		this.type = $type;
@@ -25,12 +26,6 @@
 	var p = SystemDownDisplayEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = SystemDownDisplayEvent;
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'SystemDownDisplayEvent';
 	};

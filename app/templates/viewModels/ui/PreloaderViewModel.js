@@ -1,5 +1,11 @@
 (function(){
-
+    /**
+     * class of PreloaderViewModel.
+     *
+     * @class PreloaderViewModel
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.viewmodels.ui
+     */
 	var PreloaderViewModel = function() {
 		if (PreloaderViewModel.instance===null) {
 			PreloaderViewModel.instance = this;

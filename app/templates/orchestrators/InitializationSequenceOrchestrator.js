@@ -4,6 +4,7 @@
      *
      * @class InitializationSequenceOrchestrator
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.orchestrators
      */
 	var InitializationSequenceOrchestrator = function() {
 		if (InitializationSequenceOrchestrator.instance===null) {

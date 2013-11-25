@@ -4,6 +4,7 @@
      *
      * @class AbstractInitializer
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.initializers
      */
 	var AbstractInitializer = function() {};
 	

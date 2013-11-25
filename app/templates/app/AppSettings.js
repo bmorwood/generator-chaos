@@ -1,9 +1,10 @@
 (function(){
     /**
-     * singleton of AppSettings.
+     * App settings is used to hold application settings. Contains all the application specific start-up data. e.g. width, height and root container.
      *
      * @class AppSettings
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.app
      */
     var AppSettings = function() {
         if (AppSettings.instance===null) {

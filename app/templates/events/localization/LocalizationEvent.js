@@ -3,8 +3,9 @@
      * event of LocalizationEvent.
      *
      * @class LocalizationEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.localization
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
     var LocalizationEvent = function($type, $params) {
         this.params = $params || null;

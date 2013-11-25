@@ -3,8 +3,9 @@
      * event of AppConfigEvent.
      *
      * @class AppConfigEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.app
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var AppConfigEvent = function($type) {
 		this.type = $type;
@@ -32,12 +33,6 @@
 	var p = AppConfigEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = AppConfigEvent;
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'AppConfigEvent';
 	};

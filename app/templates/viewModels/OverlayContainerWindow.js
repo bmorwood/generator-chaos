@@ -1,5 +1,11 @@
 (function(){
-	
+    /**
+     * class of OverlayContainerWindow.
+     *
+     * @class OverlayContainerWindow
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.viewmodels
+     */
 	var OverlayContainerWindow = function($name, $window, $isModal, $x, $y) {
 		this.name = $name;
 		this.window = $window;

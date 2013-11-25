@@ -4,6 +4,7 @@
      *
      * @class AbstractController
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.controllers
      */
 	var AbstractController = function() { 
 		this.initialize();

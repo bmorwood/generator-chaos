@@ -1,9 +1,12 @@
 (function(){
     /**
-     * controller of SystemDownController.
+     * SystemDownController controller is used to listen for system errors and report to commands.
      *
      * @class SystemDownController
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.controllers
+     * @extends <%= nameSpace.toLowerCase() %>.controllers.AbstractController
+
      */
 	var SystemDownController = function() {
 		
@@ -15,20 +18,9 @@
 		}
 	};
 
-    /**
-    * instance is the class, this is used for singleton classes.
-    *
-    * @property instance
-    * @type {Object}
-    * @default null
-    */
+
 	SystemDownController.instance = null;
 
-    /**
-    * getInstance is called to get the single instance of this class.
-    *
-    * @method getInstance
-    */
 	SystemDownController.getInstance = function (){
 		if(SystemDownController.instance===null){
 			SystemDownController.instance = new SystemDownController();
@@ -43,12 +35,6 @@
 		this.addCommand(<%= nameSpace %>.SystemDownEvent.SYSTEM_DOWN, <%= nameSpace %>.SystemDownCommand); //reacts to changes
 	};
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'SystemDownController';
 	};

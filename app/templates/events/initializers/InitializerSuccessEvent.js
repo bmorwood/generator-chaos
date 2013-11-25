@@ -3,8 +3,9 @@
      * event of InitializerSuccessEvent.
      *
      * @class InitializerSuccessEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.initializers
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var InitializerSuccessEvent = function($initializerName) {
 		this.initializerName = $initializerName;
@@ -23,12 +24,6 @@
 	
 	p.initializerName;
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'InitializerSuccessEvent';
 	};

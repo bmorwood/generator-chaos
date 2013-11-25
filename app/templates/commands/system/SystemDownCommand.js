@@ -1,9 +1,11 @@
 (function(){
     /**
-     * command of SystemDownCommand.
+     * SystemDownCommand command is used to monitor system errors that require the UI display for the user.
      *
      * @class SystemDownCommand
      * @constructor
+     * @users <%= nameSpace %>.events.system.SystemDownDisplayEvent
+     * @namespace <%= nameSpace.toLowerCase() %>.commands.system
      */
 	var SystemDownCommand = function() {
 		this.initialize();

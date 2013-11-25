@@ -3,8 +3,9 @@
      * event of InitializationCompleteEvent.
      *
      * @class InitializationCompleteEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.initializers
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var InitializationCompleteEvent = function() {
 		this.type = InitializationCompleteEvent.COMPLETE;
@@ -20,12 +21,6 @@
 	var p = InitializationCompleteEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = InitializationCompleteEvent;
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return "InitializationCompleteEvent";
 	};

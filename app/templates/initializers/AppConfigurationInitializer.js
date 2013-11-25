@@ -4,6 +4,7 @@
      *
      * @class AppConfigurationInitializer
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.initializers
      */
 	var AppConfigurationInitializer = function() {
 		this.initialize();

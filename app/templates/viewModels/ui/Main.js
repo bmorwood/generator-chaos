@@ -1,5 +1,11 @@
 (function(){
-
+    /**
+     * class of Main.
+     *
+     * @class Main
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.viewmodels.ui
+     */
     var Main = function() {
         if (Main.instance===null) {
             Main.instance = this;

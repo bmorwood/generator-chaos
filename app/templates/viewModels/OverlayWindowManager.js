@@ -1,5 +1,11 @@
 (function(){
-
+    /**
+     * class of OverlayWindowManager.
+     *
+     * @class OverlayWindowManager
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.viewmodels
+     */
 	var OverlayWindowManager = function() {
 	};
 

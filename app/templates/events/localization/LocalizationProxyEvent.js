@@ -3,8 +3,9 @@
      * singleton of LocalizationProxyEvent.
      *
      * @class LocalizationProxyEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.localization
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var LocalizationProxyEvent = function($type, $params) {
 		this.params = $params || null;
@@ -45,12 +46,6 @@
 	var p = LocalizationProxyEvent.prototype = new <%= nameSpace %>.AbstractEvent();
 	p.constructor = LocalizationProxyEvent;
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'LocalizationProxyEvent';
 	};

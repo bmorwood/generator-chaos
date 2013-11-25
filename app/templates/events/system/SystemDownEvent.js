@@ -3,8 +3,9 @@
      * service of SystemDownEvent.
      *
      * @class SystemDownEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.system
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var SystemDownEvent = function($instruction) {
 		this.instruction = $instruction;
@@ -17,12 +18,7 @@
 	p.constructor = SystemDownEvent;
 	
 	p.instruction;
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
+
 	p.toString = function (){
 		return 'SystemDownEvent';
 	};

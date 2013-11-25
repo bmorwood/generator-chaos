@@ -1,9 +1,10 @@
 (function(){
     /**
-     * singleton of AppProperties.
+     * App Properties is used to hold application specific properties.
      *
      * @class AppProperties
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.app
      */
 	var AppProperties = function() {
 		if (AppProperties.instance===null) {
@@ -39,11 +40,36 @@
 	
 	var p = AppProperties.prototype;
 
-    p.serviceBaseURL;
+    /**
+    * used to hold the value of base URLs. The parameter is set by the location service.
+    *
+    * @property serviceBaseURL
+    * @type {String}
+    * @default ''
+    */
+    p.serviceBaseURL = '';
+
+    /**
+    * Locale is the current lcoale used to display the copy the user.
+    *
+    * @property locale
+    * @type {String}
+    * @default 'en-us'
+    */
     p.locale = 'en-us';
-	
+
+    /**
+    * initialize is called after the class is usally instantiated.
+    *
+    * @method initialize
+    */
 	p.initialize = function (){};
 
+    /**
+    * init is called after the class is usally instantiated.
+    *
+    * @method init
+    */
     p.init = function(){
         this.serviceBaseURL =  <%= nameSpace %>.ServiceLocator.getInstance().getServiceBaseUrl();
         new <%= nameSpace %>.AppConfigEvent(<%= nameSpace %>.AppConfigEvent.CONFIG_READY).dispatch();

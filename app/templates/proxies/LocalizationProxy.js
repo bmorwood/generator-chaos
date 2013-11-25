@@ -4,6 +4,7 @@
      *
      * @class LocalizationProxy
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.proxies
      */
 	var LocalizationProxy = function() {
 		if (LocalizationProxy.instance===null) {

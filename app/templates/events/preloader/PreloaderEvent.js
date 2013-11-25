@@ -3,8 +3,9 @@
      * event of PreloaderEvent.
      *
      * @class PreloaderEvent
-     * @extends <%= nameSpace %>.AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.events.preloader
+     * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
 	var PreloaderEvent = function($type, $percentage) {
 		this.percentage = $percentage;
@@ -28,12 +29,6 @@
 	
 	p.percentage;
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'PreloaderEvent';
 	};

@@ -4,6 +4,7 @@
      *
      * @class LocalizationInitializer
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.initializers
      */
 	var LocalizationInitializer = function() {
 		this.initialize();

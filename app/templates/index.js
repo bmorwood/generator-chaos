@@ -1,12 +1,20 @@
 (function($window){
     /**
-     A utility that brokers HTTP requests...
-
-     @class <%= nameSpace %>
-     @constructor
+     * A utility that brokers HTTP requests...
+     *
+     * @class <%= nameSpace %>
+     * @constructor
+     * @main <%= nameSpace.toLowerCase() %>
+     * @namespace <%= nameSpace.toLowerCase() %>
      **/
     var <%= nameSpace %> = function($params){
-
+        /**
+        * A utility that brokers HTTP requests...
+        *
+        * @attribute $params
+        * @type Object
+        * @default {width: 0, height: 0, container: '<div/>'}
+        **/
         var appSettings = <%= nameSpace %>.AppSettings.getInstance();
         appSettings.width = $params.width || appSettings.width;
         appSettings.height = $params.height || appSettings.height;

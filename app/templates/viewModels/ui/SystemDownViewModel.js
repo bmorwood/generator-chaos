@@ -1,5 +1,11 @@
 (function(){
-	
+    /**
+     * class of SystemDownViewModel.
+     *
+     * @class SystemDownViewModel
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.viewmodels.ui
+     */
 	var SystemDownViewModel = function() {
 		if (SystemDownViewModel.instance===null) {
 			SystemDownViewModel.instance = this;

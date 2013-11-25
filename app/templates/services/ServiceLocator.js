@@ -1,5 +1,11 @@
 (function(){
-	
+    /**
+     * class of ServiceLocator.
+     *
+     * @class ServiceLocator
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.services
+     */
 	var ServiceLocator = function() {
 		if (ServiceLocator.instance===null) {
 			ServiceLocator.instance = this;

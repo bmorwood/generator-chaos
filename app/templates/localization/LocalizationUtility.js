@@ -3,7 +3,8 @@
     * class of LocalizationUtility.
     *
     * @class LocalizationUtility
-    * @constructor
+     * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.localization
     */
     var LocalizationUtility = function() {
         if (LocalizationUtility.instance===null) {

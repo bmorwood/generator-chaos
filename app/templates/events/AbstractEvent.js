@@ -4,6 +4,7 @@
      *
      * @class AbstractEvent
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>
      */
 	var AbstractEvent = function($type) { 
 		this.type = $type;

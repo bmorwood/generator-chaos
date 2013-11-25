@@ -4,6 +4,8 @@
      *
      * @class Controller
      * @constructor
+     * @namespace <%= nameSpace.toLowerCase() %>.controllers
+     * @extends <%= nameSpace.toLowerCase() %>.controllers.AbstractController
      */
 	var Controller = function() {
 		if (Controller.instance===null) {
