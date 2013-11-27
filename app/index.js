@@ -64,8 +64,6 @@ ChaosGenerator.prototype.app = function app() {
 ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('jshintrc', '.jshintrc');
 
-
-
     this.copy('locales/dev/translation.json', 'locales/dev/translation.json');
     this.copy('locales/en/translation.json', 'locales/en/translation.json');
     this.copy('locales/en-ca/translation.json', 'locales/en-ca/translation.json');

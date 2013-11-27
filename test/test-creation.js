@@ -21,20 +21,4 @@ describe('chaos generator', function () {
             done();
         }.bind(this));
     });
-
-    it('creates expected files', function (done) {
-        var expected = [
-            // add files you expect to exist here.
-            '.jshintrc'
-        ];
-
-        helpers.mockPrompt(this.app, {
-            'nameSpace': 'mocha'
-        });
-        this.app.options['skip-install'] = true;
-        this.app.run({}, function () {
-            helpers.assertFiles(expected);
-            done();
-        });
-    });
 });
