@@ -5,6 +5,7 @@
      * @class PreloaderViewModel
      * @constructor
      * @namespace <%= nameSpace.toLowerCase() %>.viewmodels.ui
+     * @extends <%= nameSpace.toLowerCase() %>.viewmodels.AbstractViewModel
      */
 	var PreloaderViewModel = function() {
 		if (PreloaderViewModel.instance===null) {
@@ -23,7 +24,8 @@
 		return PreloaderViewModel.instance;
 	};
 
-	var p = PreloaderViewModel.prototype;
+	var p = PreloaderViewModel.prototype = new <%= nameSpace %>.AbstractViewModel();
+    p.constructor = PreloaderViewModel;
 
 	p.id = '<%= nameSpace.toLowerCase() %>-preloader-container';
 

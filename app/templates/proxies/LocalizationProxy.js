@@ -1,6 +1,6 @@
 (function(){
     /**
-     * class of LocalizationProxy.
+     * class of LocalizationProx uses i18N.
      *
      * @class LocalizationProxy
      * @constructor
@@ -25,14 +25,25 @@
 			
 		return LocalizationProxy.instance;
 	};
-	
+    /**
+    system down button copy
+
+    @property DEFAULT_LOCALE_CODE
+    @type String
+    @default 'en_us'
+    @static
+    **/
 	LocalizationProxy.DEFAULT_LOCALE_CODE = 'en_us';
 	
 	var p = LocalizationProxy.prototype;
 
     p.localeData;
     p.options;
-	
+    /**
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
+    * @method initialize
+    */
 	p.initialize = function (){
         this.appSettings = <%= nameSpace %>.AppSettings.getInstance();
 

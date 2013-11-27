@@ -1,6 +1,6 @@
 (function(){
     /**
-     * singleton of AbstractController.
+     * AbstractController is used as the base class for other controllers to extend from.
      *
      * @class AbstractController
      * @constructor
@@ -24,8 +24,18 @@
 		AbstractController.commands[$eventName] = null;
 		delete AbstractController.commands[$eventName];
 	};
-	
+    /**
+    * $initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
+    * @method $initialize
+    * @final
+    */
 	p.$initialize = function (){ };
+    /**
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
+    * @method initialize
+    */
 	p.initialize = function (){ this.$initialize() };
 	
 	AbstractController.handleEvent = function ($event) {

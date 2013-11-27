@@ -12,9 +12,10 @@
 	};
 
     /**
-     * Fired when an sample event occurs...
+     * Fired when initializer is completed without an errors.
      *
      * @event COMPLETE
+     * @type {String}
      **/
 	InitializationCompleteEvent.COMPLETE = "<%= nameSpace.toLowerCase() %>.initializationcompleteevent::complete";
 	

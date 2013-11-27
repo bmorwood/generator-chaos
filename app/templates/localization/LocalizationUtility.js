@@ -1,6 +1,6 @@
 (function(){
     /**
-    * class of LocalizationUtility.
+    * not yet implemented.
     *
     * @class LocalizationUtility
      * @constructor

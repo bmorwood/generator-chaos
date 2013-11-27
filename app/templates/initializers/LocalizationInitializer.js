@@ -1,6 +1,6 @@
 (function(){
     /**
-     * initializer of LocalizationInitializer.
+     * initialize the localized copy for the application.
      *
      * @class LocalizationInitializer
      * @constructor
@@ -14,7 +14,11 @@
 	p.constructor = LocalizationInitializer;
 	
 	p.localizationProxy;
-	
+    /**
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
+    * @method initialize
+    */
 	p.initialize = function (){
 		this.$initialize('LOCALIZATION_INITIALIZER',
 			<%= nameSpace %>.LocalizationProxyEvent.LOAD_LOCALIZATION_CONTENT_SUCCESS,

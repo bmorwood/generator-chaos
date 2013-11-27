@@ -1,10 +1,12 @@
 (function(){
     /**
-     * initializer of AppConfigurationInitializer.
+     * initialize the configuration of teh application.
      *
      * @class AppConfigurationInitializer
      * @constructor
      * @namespace <%= nameSpace.toLowerCase() %>.initializers
+     * @extends <%= nameSpace.toLowerCase() %>.initializers.AbstractInitializer
+     * @uses <%= nameSpace.toLowerCase() %>.app.AppProperties
      */
 	var AppConfigurationInitializer = function() {
 		this.initialize();
@@ -12,7 +14,11 @@
 
 	var p = AppConfigurationInitializer.prototype = new <%= nameSpace %>.AbstractInitializer();
 	p.constructor = AppConfigurationInitializer;
-	
+    /**
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
+    * @method initialize
+    */
 	p.initialize = function (){		
 		this.$initialize(
 			'APP_CONFIG_INITIALIZER',
@@ -23,18 +29,10 @@
 	
 	p.execute = function (){
 		this.$execute();
-        //AppConfigurationInitializer.execute.apply(this, arguments)
-		//<%= nameSpace %>.AppConfig.getInstance().loadProperties();
 
         <%= nameSpace %>.AppProperties.getInstance().init();
 	};
 
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
 	p.toString = function (){
 		return 'AppConfigurationInitializer';
 	};

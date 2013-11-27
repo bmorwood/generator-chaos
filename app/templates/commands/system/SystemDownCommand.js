@@ -4,7 +4,7 @@
      *
      * @class SystemDownCommand
      * @constructor
-     * @users <%= nameSpace %>.events.system.SystemDownDisplayEvent
+     * @uses <%= nameSpace %>.events.system.SystemDownDisplayEvent
      * @namespace <%= nameSpace.toLowerCase() %>.commands.system
      */
 	var SystemDownCommand = function() {
@@ -12,9 +12,18 @@
 	};
 	
 	var p = SystemDownCommand.prototype;
-	
+    /**
+     * initialize is used to run code after the class is instantiated.
+     * NOTE: you can delete this method and add your code right in the constructor.
+     * @method initialize
+     */
 	p.initialize = function (){};
-	
+    /**
+     * execute is used to run code when a specific event is fired, the controllers are setup to map a command to a event. NOTE: execute is called by {{#crossLink "<%= nameSpace.toLowerCase() %>.controllers.SystemDownController"}}{{/crossLink}}.
+     *
+     * @method execute
+     * @final
+     */
 	p.execute = function($event){
 
 		if($event.instruction == <%= nameSpace %>.SystemDownDisplayEvent.SHOW)

@@ -1,6 +1,6 @@
 (function(){
     /**
-     * event of AppConfigEvent.
+     * events for application config.
      *
      * @class AppConfigEvent
      * @constructor
@@ -12,21 +12,24 @@
 	};
 
     /**
-     * Fired when an sample event occurs...
+     * Fired when app configuration is ready.
      *
      * @event CONFIG_READY
+     * @type {String}
      **/
 	AppConfigEvent.CONFIG_READY = '<%= nameSpace.toLowerCase() %>.appconfigevent::config.ready';
     /**
-     * Fired when an sample event occurs...
+     * Fired when configuration has experienced an error.
      *
      * @event CONFIG_ERROR
+     * @type {String}
      **/
 	AppConfigEvent.CONFIG_ERROR = '<%= nameSpace.toLowerCase() %>.appconfigevent::config.error';
     /**
-     * Fired when an sample event occurs...
+     * Fired when when the file is loaded.
      *
      * @event CONFIG_LOAD
+     * @type {String}
      **/
 	AppConfigEvent.CONFIG_LOAD = '<%= nameSpace.toLowerCase() %>.appconfigevent::config.load';
 

@@ -5,6 +5,7 @@
      * @class SystemDownViewModel
      * @constructor
      * @namespace <%= nameSpace.toLowerCase() %>.viewmodels.ui
+     * @extends <%= nameSpace.toLowerCase() %>.viewmodels.AbstractViewModel
      */
 	var SystemDownViewModel = function() {
 		if (SystemDownViewModel.instance===null) {
@@ -23,14 +24,15 @@
 		return SystemDownViewModel.instance;
 	};
 	
-	var p = SystemDownViewModel.prototype;
+	var p = SystemDownViewModel.prototype = new <%= nameSpace %>.AbstractViewModel();
+    p.constructor = SystemDownViewModel;
 	
 	p.h1Txt;
 	p.h2Txt;
 	p.buttonTxt;
-	
+
 	p.id = '<%= nameSpace.toLowerCase() %>-system-down-view';
-	
+
 	p.initialize = function (){
 
         <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.SystemDownDisplayEvent.SHOW, this.handleShowSystemDown, this );
@@ -77,7 +79,7 @@
 	p.handleClick = function (){
 		alert('go somewhere')
 	};
-	
+
 	p.render = function($src){
 		var elm = <%= nameSpace %>.templates['SystemDown.html']();
 		$src.append(elm);
@@ -88,12 +90,7 @@
 	p.dispose = function (){
 		$('#' + this.id).remove();
 	};
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
+
 	p.toString = function (){
 		return 'SystemDownViewModel';
 	};

@@ -1,10 +1,11 @@
 (function(){
     /**
-     * abstract event AbstractEvent.
+     * AbstractEvent is used as the base class for other events to extend from.
      *
      * @class AbstractEvent
      * @constructor
-     * @namespace <%= nameSpace.toLowerCase() %>
+     * @param {Event} $type type is the event.
+     * @namespace <%= nameSpace.toLowerCase() %>.events
      */
 	var AbstractEvent = function($type) { 
 		this.type = $type;
@@ -12,7 +13,7 @@
 	
 	var p = AbstractEvent.prototype;
     /**
-     * instance is the class, this is used for singleton classes.
+     * holds the event assigned to this instance.
      *
      * @property type
      * @type {String}
@@ -20,7 +21,7 @@
      */
 	p.type;
     /**
-     * instance is the class, this is used for singleton classes.
+     * used to reference the target that this event is assigned to.
      *
      * @property target
      * @type {Object}
@@ -29,7 +30,7 @@
 	p.target;
 
     /**
-     * dispatch
+     * dispatch the event.
      *
      * @method dispatch
      */

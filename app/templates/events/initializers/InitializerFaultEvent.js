@@ -4,6 +4,7 @@
      *
      * @class InitializerFaultEvent
      * @constructor
+     * @param {String} $initializerName initializer name.
      * @namespace <%= nameSpace.toLowerCase() %>.events.initializers
      * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
@@ -13,9 +14,10 @@
 	};
 
     /**
-     * Fired when an sample event occurs...
+     * Fired when a initializer has encountered an error.
      *
      * @event FAULT
+     * @type {String}
      **/
 	InitializerFaultEvent.FAULT = "<%= nameSpace.toLowerCase() %>.initializerfaultevent::fault";
 	

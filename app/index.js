@@ -117,6 +117,7 @@ ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.template('services/AbstractService.js', 'app/services/AbstractService.js');
     this.template('services/ServiceLocator.js', 'app/services/ServiceLocator.js');
 
+    this.template('viewModels/AbstractViewModel.js', 'app/viewModels/AbstractViewModel.js');
     this.template('viewModels/OverlayContainerWindow.js', 'app/viewModels/OverlayContainerWindow.js');
     this.template('viewModels/OverlayWindowManager.js', 'app/viewModels/OverlayWindowManager.js');
     this.template('viewModels/ui/Main.js', 'app/viewModels/ui/Main.js');

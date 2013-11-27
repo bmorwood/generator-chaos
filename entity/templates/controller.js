@@ -40,8 +40,8 @@
     p.constructor = <%= name %>;
 
     /**
-    * initialize is called after the constructor is created.
-    *
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
     * @method initialize
     */
     p.initialize = function (){

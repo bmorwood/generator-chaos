@@ -1,6 +1,6 @@
 (function(){
     /**
-     * App settings is used to hold application settings. Contains all the application specific start-up data. e.g. width, height and root container.
+     * App settings is used to hold application settings. Contains all the application specific start-up data. e.g. width, height and the root app container.
      *
      * @class AppSettings
      * @constructor
@@ -16,7 +16,7 @@
     };
 
     /**
-    * instance is the class, this is used for singleton classes.
+    * instance is used to holder the singleton class for reference.
     *
     * @property instance
     * @type {Object}
@@ -25,7 +25,7 @@
     AppSettings.instance = null;
 
     /**
-    * getInstance is called to get the single instance of this class.
+    * getInstance returns the only instance of this class. It will also create an istance of the class if it has not been instantiated yet.
     *
     * @method getInstance
     */
@@ -39,11 +39,35 @@
     };
 
     var p = AppSettings.prototype;
-
+    /**
+    * Width is used to set the initial width of the application.
+    *
+    * @property width
+    * @type {Number}
+    * @default 0
+    */
     p.width = 0;
+    /**
+    * Height is used to set the initial width of the application.
+    *
+    * @property Height
+    * @type {Number}
+    * @default 0
+    */
     p.height = 0;
+    /**
+    * rootContainer is used to hold the root DOM element of the application.
+    * If no DOM element is supplied in the init, a default div is created and appened to the body.
+    * @property rootContainer
+    * @type {HTMLElement}
+    * @default '<div/>'
+    */
     p.rootContainer;
-
+    /**
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
+    * @method initialize
+    */
     p.initialize = function (){};
     /**
     * toString returns the class name.

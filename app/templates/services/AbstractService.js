@@ -10,7 +10,15 @@
 	};
     
     var p = AbstractService.prototype;
-	
+    /**
+     * default service request using ajax calls
+     *
+     *
+     * @method initServiceWithConfig
+     * @param {String} $url url to call
+     * @param {Function} $success callback success
+     * @param {Function} $fault  callback fault
+     */
 	p.$initServiceWithConfig = function ($url, $success, $fault) {
 		$.get($url, function ($data) {
 
@@ -23,8 +31,8 @@
 		});
 	};
     /**
-    * My method description.  Like other pieces of your comment blocks,
-    * this can span multiple lines.
+    * default service request using ajax calls
+    *
     *
     * @method initServiceWithConfig
     * @param {String} $url url to call

@@ -4,12 +4,11 @@
      *
      * @class <%= nameSpace %>
      * @constructor
-     * @main <%= nameSpace.toLowerCase() %>
-     * @namespace <%= nameSpace.toLowerCase() %>
+     * @namespace <%= nameSpace %>
      **/
     var <%= nameSpace %> = function($params){
         /**
-        * A utility that brokers HTTP requests...
+        * initialize the application.
         *
         * @attribute $params
         * @type Object

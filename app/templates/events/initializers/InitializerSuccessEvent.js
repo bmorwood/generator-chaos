@@ -4,6 +4,7 @@
      *
      * @class InitializerSuccessEvent
      * @constructor
+     * @param {String} $initializerName initializer name.
      * @namespace <%= nameSpace.toLowerCase() %>.events.initializers
      * @extends <%= nameSpace.toLowerCase() %>.AbstractEvent
      */
@@ -13,9 +14,10 @@
 	};
 
     /**
-     * Fired when an sample event occurs...
+     * Fired when a initializer is completed without errors.
      *
      * @event SUCCESS
+     * @type {String}
      **/
 	InitializerSuccessEvent.SUCCESS = '<%= nameSpace.toLowerCase() %>.initializersuccessevent::success';
 	

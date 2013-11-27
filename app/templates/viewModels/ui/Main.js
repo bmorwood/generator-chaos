@@ -5,6 +5,7 @@
      * @class Main
      * @constructor
      * @namespace <%= nameSpace.toLowerCase() %>.viewmodels.ui
+     * @extends <%= nameSpace.toLowerCase() %>.viewmodels.AbstractViewModel
      */
     var Main = function() {
         if (Main.instance===null) {
@@ -24,7 +25,8 @@
         return Main.instance;
     };
 
-    var p = Main.prototype;
+    var p = Main.prototype = new <%= nameSpace %>.AbstractViewModel();
+    p.constructor = Main;
 
     p.id = '<%= nameSpace.toLowerCase() %>-main';
     p.msg;
@@ -33,7 +35,7 @@
 
         this.msg = ko.observable();
 
-        <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.updateCopy, this )
+        <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.updateCopy, this );
     };
 
     p.render = function($src){
@@ -54,12 +56,7 @@
     p.dispose = function (){
         $('#' + this.id).remove();
     };
-    /**
-    * toString returns the class name.
-    *
-    * @method toString
-    * @return {String} Class name.
-    */
+
     p.toString = function (){
         return 'Main';
     };

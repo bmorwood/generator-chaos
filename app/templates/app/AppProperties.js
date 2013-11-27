@@ -16,7 +16,7 @@
 	};
 
     /**
-    * instance is the class, this is used for singleton classes.
+    * instance is used to holder the singleton class for reference.
     *
     * @property instance
     * @type {Object}
@@ -25,13 +25,13 @@
 	AppProperties.instance = null;
 
     /**
-    * getInstance is called to get the single instance of this class.
+    * getInstance returns the only instance of this class. It will also create an istance of the class if it has not been instantiated yet.
     *
     * @method getInstance
     */
 	AppProperties.getInstance = function (){
 		
-		if(AppProperties.instance===null){
+		if(AppProperties.instance === null){
 			AppProperties.instance = new AppProperties();
 		}
 			
@@ -50,23 +50,22 @@
     p.serviceBaseURL = '';
 
     /**
-    * Locale is the current lcoale used to display the copy the user.
+    * Locale is used to store the current locale. It will default to en-US.
     *
     * @property locale
     * @type {String}
     * @default 'en-us'
     */
     p.locale = 'en-us';
-
     /**
-    * initialize is called after the class is usally instantiated.
-    *
+    * initialize is used to run code after the class is instantiated.
+    * NOTE: you can delete this method and add your code right in the constructor.
     * @method initialize
     */
 	p.initialize = function (){};
 
     /**
-    * init is called after the class is usally instantiated.
+    * init is called by the app initializer
     *
     * @method init
     */

@@ -10,7 +10,7 @@
 
     };
     /**
-     Template for this view's container...
+     system down copy
 
      @property SYSTEM_DOWN_H1
      @type String
@@ -19,7 +19,7 @@
      **/
     LC.SYSTEM_DOWN_H1;
     /**
-     Template for this view's container...
+     system down copy
 
      @property SYSTEM_DOWN_H2
      @type String
@@ -28,7 +28,7 @@
      **/
     LC.SYSTEM_DOWN_H2;
     /**
-     Template for this view's container...
+     system down button copy
 
      @property SYSTEM_DOWN_BUTTON
      @type String
@@ -37,7 +37,7 @@
      **/
     LC.SYSTEM_DOWN_BUTTON;
     /**
-     Template for this view's container...
+     main page welcome message
 
      @property WELCOME_MESSAGE
      @type String

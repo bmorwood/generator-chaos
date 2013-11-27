@@ -48,7 +48,7 @@
 		var hostWithPort = this.extractHostWithPort();
 		var serviceBaseUrl;
 		
-		<%= nameSpace %>.logger.info('NS Service Locater sees host with port: ' + hostWithPort);
+		<%= nameSpace %>.logger.info('Service Locator sees host with port: ' + hostWithPort);
 		
 		if (this.serviceDictionary[hostWithPort]) {
 			// Return appropriate mapping URL from dictionary.
@@ -61,7 +61,6 @@
 		<%= nameSpace %>.logger.info('NS Service Locator resolved service URL to: ' + serviceBaseUrl);
 		
 		return this.serviceBaseUrl = serviceBaseUrl;
-
 	};
 	
 	p.extractProtocol = function () {

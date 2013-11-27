@@ -1,10 +1,11 @@
 (function(){
     /**
-     * service of EventDispatcher.
+     * The class dispatches events so listeners can react accordingly.
      *
      * @class EventDispatcher
-     * @extends <%= nameSpace %>.AbstractService
      * @constructor
+     * @param {Object} $target assign a object to the event.
+     * @namespace <%= nameSpace.toLowerCase() %>.events
      */
 	var EventDispatcher = function($target) {
 		this.target = $target;
@@ -21,14 +22,41 @@
 	};
 	
 	var p = EventDispatcher.prototype;
-	
+    /**
+     * used to reference the target that this event is assigned to.
+     *
+     * @property target
+     * @type {Object}
+     * @default null
+     */
 	p.target;
+    /**
+     * contains all the events and listeners.
+     *
+     * @property events
+     * @type {Array}
+     * @default null
+     */
 	p.events;
-	
+    /**
+     * initialize is used to run code after the class is instantiated.
+     * NOTE: you can delete this method and add your code right in the constructor.
+     * @method initialize
+     */
 	p.initialize = function ($target){ 
 		this.events = [];
 	};
-	
+
+    /**
+     * used to find the event(s) and associated listener(s) calls their assigned methods.
+     *  __example__
+     *  ```
+     *  new <%= nameSpace %>.LocalizationEvent(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY).dispatch();
+     *  ```
+     * @method dispatchEvent
+     * @param {Event} $event is the event that is used to call the listeners assigned methods.
+     * @return {Boolean} returns 'true' a listener was found and called and 'false' if no listeners were found.
+     */
 	p.dispatchEvent = function ( $event ) 
 	{
 		if(this.target !== null || this.target !== undefined)
@@ -47,7 +75,17 @@
 		
 		return true;
 	};
-	
+    /**
+     * Find the event(s) and associated listener(s) and calls their assigned methods.
+     *  __example__
+     *  ```
+     *  <%= nameSpace %>.EventDispatcher.getInstance().addEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.updateCopy, this);
+     *  ```
+     * @method addEventListener
+     * @param {Event} $type is the event that is used to call the listeners assigned methods.
+     * @param {Method} $listener is the method to call when the an event is dispatched.
+     * @param {Object} $context holds the class reference that is used to call the method and keep it in the relevant context of the class.
+     */
 	p.addEventListener = function( $type, $listener, $context) 
 	{
 		
@@ -64,7 +102,17 @@
 			this.events[$type].push({listener: $listener, context: $context});
 		}
 	};
-	
+	 /**
+     * Remove an event listener.
+     *  __example__
+     *  ```
+     *  <%= nameSpace %>.EventDispatcher.getInstance().removeEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.updateCopy, this);
+     *  ```
+     * @method removeEventListener
+     * @param {Event} $type is the event that is used to call the listeners assigned methods.
+     * @param {Method} $listener is the method to call when the an event is dispatched.
+     * @param {Object} $context holds the class reference that is used to call the method and keep it in the relevant context of the class.
+     */
 	p.removeEventListener = function( $type, $listener, $context ) 
 	{
 
@@ -88,7 +136,18 @@
 			delete this.events[$type];
 		}
 	};
-	
+    /**
+     * Check to see if there are any event listeners for event, method and context.
+     *  __example__
+     *  ```
+     *  <%= nameSpace %>.EventDispatcher.getInstance().hasEventListener(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY, this.updateCopy, this);
+     *  ```
+     * @method hasEventListener
+     * @param {Event} $type is the event that is used to call the listeners assigned methods.
+     * @param {Method} $listener is the method to call when the an event is dispatched.
+     * @param {Object} $context holds the class reference that is used to call the method and keep it in the relevant context of the class.
+     * @return {Boolean} 'true' if event listener is assigned already.'false' if no event listener was found.
+     */
 	p.hasEventListener = function ($type, $listener, $context){
 		
 		if($context === undefined) {debugger}
@@ -102,6 +161,19 @@
 		
 		return false;
 	};
+    /**
+     * Check to see if there are any event listeners for event, method and context.
+     *  __example__
+     *  ```
+     *  <%= nameSpace %>.EventDispatcher.getInstance().getListenersForEvent(<%= nameSpace %>.LocalizationEvent.LOCALIZATION_CONTENT_READY);
+     *  ```
+     * @method getListenersForEvent
+     * @param {Event} $event is the event that is used to call the listeners assigned methods.
+     * @return {Array} returns an 'Array' of classes that are assigned to an 'Event'.
+     */
+	p.getListenersForEvent = function($event){
+        return _.pluck(this.events[$event], 'context');
+    };
 
 	/**
     * toString returns the class name.
