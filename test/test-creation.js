@@ -7,13 +7,16 @@ var helpers = require('yeoman-generator').test;
 
 describe('chaos generator', function () {
     beforeEach(function (done) {
-        helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+        helpers.testDirectory(path.join(__dirname, './temp'), function (err) {
             if (err) {
                 return done(err);
             }
 
             this.app = helpers.createGenerator('chaos:app', [
-                '../../app'
+                '../../app', [
+                    helpers.createDummyGenerator(),
+                    'mocha'
+                ]
             ]);
             done();
         }.bind(this));
@@ -22,12 +25,11 @@ describe('chaos generator', function () {
     it('creates expected files', function (done) {
         var expected = [
             // add files you expect to exist here.
-            '.jshintrc',
-            '.editorconfig'
+            '.jshintrc'
         ];
 
         helpers.mockPrompt(this.app, {
-            'someOption': true
+            'nameSpace': 'mocha'
         });
         this.app.options['skip-install'] = true;
         this.app.run({}, function () {
