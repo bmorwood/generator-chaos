@@ -2,58 +2,88 @@
 
 [![NPM](https://nodei.co/npm/generator-chaos.png)](https://nodei.co/npm/generator-chaos)
 
+Maintainer: [Barry Morwood](https://github.com/bmorwood) <script data-gittip-username="bmorwood" data-gittip-widget="button" >
+</script>
 
-## Getting Started
+Chaos is a generator used to generate a Chaos application.
 
-### What is Yeoman?
+Chaos is based on the carngorhm design pattern used to create flash / flex style web applications.
+http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
 
-Trick question. It's not a thing. It's this guy:
+A Backbone generator that uses RequireJS for Yeoman that provides a functional boilerplate Backbone app out of the box. You also get access to a number of sub-generators which can be used to easily create individual models, views, collections and so on.
 
-![](http://i.imgur.com/JHaAlBJ.png)
+This is technically a fork of the [official Yeoman Backbone.js generator](https://github.com/yeoman/generator-backbone) that has been heavily edited to suit my needs and coding style.  I've added Jade templating and removed anything that I don't use or that I viewed as unnecessary.
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+## Usage
+
+Install yeoman using NPM.
 
 ```
 $ npm install -g yo
 ```
 
-### Yeoman Generators
+Install: `npm install -g generator-chaos`
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-chaos from npm, run:
-
+Make a new directory and `cd` into it:
 ```
-$ npm install -g generator-chaos
+mkdir my-new-project && cd $_
 ```
 
-Finally, initiate the generator:
-
+Run `yo chaos`
 ```
-$ yo chaos
-```
-
-### Create Entities
-```
-$ yo chaos:entity [name]
+yo chaos
 ```
 
-this will bring up a list, you can select any combination you want.
+(required)next it will ask for a namespace, enter your namespace and hit enter.
+
+## Generators
+
+Available generators:
+
+- command
+- controller
+- event
+- initializer
+- model
+- proxy
+- service
+- singleton
+- view Model
+- view
+
+```
+yo chaos:entity [object name]
+```
+this is a multiple choice selector, you can also use the 'All' to generate all entities.
+choose from the available list items, you can select any combination you want.
+
+
+## Typical workflow
+
+```
+yo chaos # generates your application base and build workflow
+[enter namespace]
+yo chaos:entity blog
+[choose view & view model]
+grunt
+```
+
+**NOTE: Do not put beginning or trailing slashes on the directory structure!**
+
+
+## Options
+
+* `--skip-install`
+
+  Skips the automatic execution of `bower` and `npm` after
+  scaffolding has finished.
+
 
 ### Included
 
 * localization: http://i18next.com
 * code documentation using http://yui.github.io/yuidoc/
-
-
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
 
 ## License
 
