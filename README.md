@@ -2,6 +2,8 @@
 
 [![NPM](https://nodei.co/npm/generator-chaos.png)](https://nodei.co/npm/generator-chaos)
 
+![alt tag](https://raw.github.com/bmorwood/generator-chaos/master/chaos-logo.jpg)
+
 Maintainer: [Barry Morwood](https://github.com/bmorwood) <script data-gittip-username="bmorwood" data-gittip-widget="button" >
 </script>
 
