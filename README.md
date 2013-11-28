@@ -10,11 +10,6 @@ Chaos is a generator used to generate a Chaos application.
 Chaos is based on the carngorhm design pattern used to create flash / flex style web applications.
 http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
 
-A Backbone generator that uses RequireJS for Yeoman that provides a functional boilerplate Backbone app out of the box. You also get access to a number of sub-generators which can be used to easily create individual models, views, collections and so on.
-
-This is technically a fork of the [official Yeoman Backbone.js generator](https://github.com/yeoman/generator-backbone) that has been heavily edited to suit my needs and coding style.  I've added Jade templating and removed anything that I don't use or that I viewed as unnecessary.
-
-
 ## Usage
 
 Install yeoman using NPM.
@@ -35,8 +30,7 @@ Run `yo chaos`
 yo chaos
 ```
 
-(required)next it will ask for a namespace, enter your namespace and hit enter.
-
+(required) next it will ask for a namespace, enter your namespace and hit enter.
 ## Generators
 
 Available generators:
