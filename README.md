@@ -9,10 +9,9 @@ Maintainer: [Barry Morwood](https://github.com/bmorwood) <script data-gittip-use
 
 Chaos is a boilerplate used to generate HTML5 interactive standalone web applications.
 
-Chaos is based on the 'carngorhm' design pattern used to create flash / flex style web applications. If you are former Flex / Flash developer or you are looking for portable web application, you are in the right place.
+Chaos is based on the 'carngorhm' design pattern used to create flash / flex style web applications. If in another life you were a Flex / Flash developer or you are looking for portable web application, you are in the right place.
 
 http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
-
 
 ### Included right out of the box.
 
@@ -20,11 +19,24 @@ http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
 * built in localization using http://i18next.com.
 * code documentation using http://yui.github.io/yuidoc/.
 * pre-loader
-* grunt
+* grunt build tasks
 * basic web application scaffolding.
 * simple setup to integrate into any web page.
 * works on all modern browsers; I still need to check older versions of IE.
 
+### grunt tasks
+
+build and open application
+```
+$ grunt
+```
+
+create documentation
+```
+$ grunt yuidoc
+```
+
+### samples - coming soon!
 
 ## Usage
 
