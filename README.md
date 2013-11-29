@@ -18,8 +18,8 @@ http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
 
 * built in localization using http://i18next.com.
 * code documentation using http://yui.github.io/yuidoc/.
-* pre-loader
-* grunt build tasks
+* pre-loader.
+* grunt build tasks.
 * basic web application scaffolding.
 * simple setup to integrate into any web page.
 * works on all modern browsers; I still need to check older versions of IE.
