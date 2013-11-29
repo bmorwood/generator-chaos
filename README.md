@@ -7,10 +7,24 @@
 Maintainer: [Barry Morwood](https://github.com/bmorwood) <script data-gittip-username="bmorwood" data-gittip-widget="button" >
 </script>
 
-Chaos is a generator used to generate a Chaos application.
+Chaos is a boilerplate used to generate HTML5 interactive standalone web applications.
 
-Chaos is based on the carngorhm design pattern used to create flash / flex style web applications.
+Chaos is based on the 'carngorhm' design pattern used to create flash / flex style web applications. If you are former Flex / Flash developer or you are looking for portable web application, you are in the right place.
+
 http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
+
+
+### Included right out of the box.
+
+
+* built in localization using http://i18next.com.
+* code documentation using http://yui.github.io/yuidoc/.
+* pre-loader
+* grunt
+* basic web application scaffolding.
+* simple setup to integrate into any web page.
+* works on all modern browsers; I still need to check older versions of IE.
+
 
 ## Usage
 
@@ -32,7 +46,15 @@ Run `yo chaos`
 yo chaos
 ```
 
-(required) next it will ask for a namespace, enter your namespace and hit enter.
+chaos will ask for a namespace, enter your namespace and hit enter.
+
+## Options
+
+* `--skip-install`
+
+  Skips the automatic execution of `bower` and `npm` after
+  scaffolding has finished.
+
 ## Generators
 
 Available generators:
@@ -45,7 +67,7 @@ Available generators:
 - proxy
 - service
 - singleton
-- view Model
+- view model
 - view
 
 ```
@@ -67,19 +89,6 @@ grunt
 
 **NOTE: Do not put beginning or trailing slashes on the directory structure!**
 
-
-## Options
-
-* `--skip-install`
-
-  Skips the automatic execution of `bower` and `npm` after
-  scaffolding has finished.
-
-
-### Included
-
-* localization: http://i18next.com
-* code documentation using http://yui.github.io/yuidoc/
 
 ## License
 
