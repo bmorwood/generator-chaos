@@ -9,7 +9,7 @@ Maintainer: [Barry Morwood](https://github.com/bmorwood) <script data-gittip-use
 
 Chaos is a boilerplate used to generate HTML5 interactive standalone web applications.
 
-Chaos is based on the 'carngorhm' design pattern used to create flash / flex style web applications. If in another life you were a Flex / Flash developer and what a familiar landscape or you are looking for portable web application, you are in the right place.
+Chaos is based on the 'carngorhm' design pattern used to create flash / flex style web applications. If in another life you were a Flex / Flash developer and want a familiar developing landscape or you are looking for portable web application, you are in the right place.
 
 http://en.wikipedia.org/wiki/Cairngorm_%28Flex_framework%29
 

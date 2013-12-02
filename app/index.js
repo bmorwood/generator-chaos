@@ -99,8 +99,6 @@ ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.template('events/system/SystemDownDisplayEvent.js', 'app/events/system/SystemDownDisplayEvent.js');
     this.template('events/system/SystemDownEvent.js', 'app/events/system/SystemDownEvent.js');
 
-
-
     this.template('initializers/AbstractInitializer.js', 'app/initializers/AbstractInitializer.js');
     this.template('initializers/AppConfigurationInitializer.js', 'app/initializers/AppConfigurationInitializer.js');
     this.template('initializers/LocalizationInitializer.js', 'app/initializers/LocalizationInitializer.js');
