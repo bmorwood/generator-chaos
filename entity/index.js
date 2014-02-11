@@ -64,6 +64,7 @@ EntityGenerator.prototype.askFor = function askFor() {
 EntityGenerator.prototype.files = function files() {
 
     var _name = this._.capitalize(this.name);
+    this.baseName = this.name;
 
     for(var i = 0; i < this.entities.length; i++){
         var _entity = this.entities[i];

@@ -17,7 +17,7 @@
     *
     * @event SAMPLE_EVENT
     **/
-    <%= name %>.SAMPLE_EVENT = '<%= nameSpace.toLowerCase() %>'.<%= name.toLowerCase() %>::sample_event;
+    <%= name %>.SAMPLE_EVENT = '<%= nameSpace.toLowerCase() %>.<%= name.toLowerCase() %>::sample_event';
 
     var p = <%= name %>.prototype = new <%= nameSpace %>.AbstractEvent();
     p.constructor = <%= name %>;

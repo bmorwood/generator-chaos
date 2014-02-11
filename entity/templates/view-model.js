@@ -9,6 +9,7 @@
     var <%= name %> = function() {
         if (<%= name %>.instance===null) {
             <%= name %>.instance = this;
+            this.initialize();
         }else{
             <%= nameSpace %>.logger.error('You should not call the constructor for ' + this.toString() + ' directly.  It is a singleton, so you should use getInstance()');
         }
@@ -27,12 +28,12 @@
     var p = <%= name %>.prototype = new <%= nameSpace %>.AbstractViewModel();
     p.constructor = <%= name %>;
 
-    p.id = '<%= nameSpace.toLowerCase() %>-<%= name.toLowerCase() %>-container';
+    p.id = '<%= nameSpace.toLowerCase() %>-<%= baseName.toLowerCase() %>view-container';
 
     p.initialize = function (){ };
 
     p.render = function($src){
-        this.elm = <%= nameSpace %>.templates['<%= name %>.html']();
+        this.elm = <%= nameSpace %>.templates['<%= baseName %>View.html']();
         $src.append(this.elm);
         ko.applyBindings(this, $('#' + this.id)[0]);
         this.addedToStage();

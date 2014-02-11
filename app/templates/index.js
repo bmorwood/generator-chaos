@@ -22,7 +22,8 @@
         appSettings.rootContainer.css({
             width: appSettings.width,
             height: appSettings.height,
-            position:'relative'
+            position:'relative',
+            overflow:'hidden'
         });
 
 

@@ -106,9 +106,10 @@ module.exports = function(grunt) {
         watch: {
             livereload: {
                 options: {
-                    livereload: LIVERELOAD_PORT
+                    livereload: {port: LIVERELOAD_PORT}
                 },
                 files: ['<%= concat.core.src %>', '*.html', 'app/**/*.html'],
+                tasks: ['base']
             }
         },
         connect: {
@@ -118,17 +119,7 @@ module.exports = function(grunt) {
                 hostname: 'localhost',
                 livereload: LIVERELOAD_PORT
             },
-            server:{},
-            livereload: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            lrSnippet,
-                            mountFolder(connect, 'build')
-                        ];
-                    }
-                }
-            }
+            server:{}
         },
         open: {
             server: {
@@ -151,7 +142,8 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('build', ['clean:build', 'copy:main', 'handlebars', 'concat', 'less', 'connect:server', 'open', 'watch']);
+    grunt.registerTask('base', ['clean:build', 'copy:main', 'handlebars', 'concat', 'less']);
+    grunt.registerTask('build', ['base', 'connect', 'open', 'watch']);
     grunt.registerTask('release', function (){
         var tasks = ['build', 'yuidoc', 'clean:release', 'imagemin', 'uglify', 'htmlmin', 'copy:release'];
         grunt.option('force', true);
