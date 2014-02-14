@@ -33,6 +33,7 @@ EntityGenerator.prototype.askFor = function askFor() {
         {name:'Service', dir:'app/services/', entityName:'<name>Service', saveAs:'<entityName>.js', file:'service.js'},
         {name:'Singleton', dir:'app/', entityName:'<name>', saveAs:'<entityName>.js', file:'singleton.js'},
         {name:'ViewModel', dir:'app/viewModels/', entityName:'<name>ViewModel', saveAs:'<entityName>.js', file:'view-model.js'},
+        {name:'LESS', dir:'css/', entityName:'<name>', saveAs:'<entityName>.less', file:'default.less'},
         {name:'View', dir:'app/views/', entityName:'<name>View', saveAs:'<entityName>.html', file:'view.html'},
         {name:'All'}
     ];

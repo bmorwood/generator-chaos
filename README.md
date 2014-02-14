@@ -105,3 +105,6 @@ grunt
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
+### CCS updates ###
+why css background imgs over img tags

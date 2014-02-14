@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             },
             base:{
                 files: {
-                    '<%= pkg.buildPath %>css/default.css': 'css/default.less'
+                    '<%= pkg.buildPath %>css/default.css': 'css/**/*.less'
                 }
             }
         },
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     {src: 'index.html', dest: '<%= pkg.buildPath %>'},
-                    {src: 'css/img/**/*', dest: '<%= pkg.buildPath %>'},
+                    {src: ['css/**/*', '!css/**/*.less'], dest: '<%= pkg.buildPath %>'},
                     {src: 'locales/**/*', dest: '<%= pkg.buildPath %>'}
                 ]
             },
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: {port: LIVERELOAD_PORT}
                 },
-                files: ['<%= concat.core.src %>', '*.html', 'app/**/*.html'],
+                files: ['<%= concat.core.src %>', '*.html', 'app/**/*.html', 'css/**/*'],
                 tasks: ['base']
             }
         },
