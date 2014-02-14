@@ -67,7 +67,7 @@ module.exports = function(grunt) {
             },
             release: {
                 files: [
-                    {expand: true, cwd: 'build/', src: ['**'], dest: 'release/'}
+                    {expand: true, cwd: '<%= pkg.buildPath %>/', src: ['**'], dest: '<%= pkg.releasePath %>/'}
                 ]
             }
         },
@@ -76,16 +76,16 @@ module.exports = function(grunt) {
                 src: ['<%= pkg.buildPath %>']
             },
             release: {
-                src: ['<%= pkg.buildPath %>']
+                src: ['<%= pkg.releasePath %>']
             }
         },
         imagemin: {
             release: {
                 files: [{
                     expand: true,
-                    cwd: '<%= pkg.buildPath %>css/img/',
+                    cwd: '<%= pkg.releasePath %>css/imgs/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: '<%= pkg.buildPath %>css/img/'
+                    dest: '<%= pkg.releasePath %>css/imgs/'
                 }]
             }
         },
@@ -145,7 +145,7 @@ module.exports = function(grunt) {
     grunt.registerTask('base', ['clean:build', 'copy:main', 'handlebars', 'concat', 'less']);
     grunt.registerTask('build', ['base', 'connect', 'open', 'watch']);
     grunt.registerTask('release', function (){
-        var tasks = ['build', 'yuidoc', 'clean:release', 'imagemin', 'uglify', 'htmlmin', 'copy:release'];
+        var tasks = ['base', 'yuidoc', 'clean:release', 'uglify', 'copy:release', 'imagemin'];
         grunt.option('force', true);
         grunt.task.run(tasks);
     });

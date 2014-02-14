@@ -50,6 +50,8 @@ ChaosGenerator.prototype.app = function app() {
     this.mkdir('app/views');
 
     this.mkdir('css');
+    this.mkdir('css/fonts');
+    this.mkdir('css/imgs');
 
     this.mkdir('locales');
 
