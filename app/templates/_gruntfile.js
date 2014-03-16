@@ -30,14 +30,8 @@ module.exports = function(grunt) {
                     footer: '}(window));'
                 },
                 src: [
-                    'bower_components/handlebars/handlebars.runtime.js',
-                    'bower_components/jquery/jquery.js',
-                    'bower_components/underscore/underscore.js',
-                    'bower_components/jquery-address/src/jquery.address.js',
-                    'bower_components/greensock-js/src/uncompressed/**/*.js',
-                    'bower_components/knockout/build/output/knockout-latest.js',
-                    'bower_components/modernizr/modernizr.js',
-                    'bower_components/i18next/release/i18next-1.7.1.js',
+                    'vendor/jquery.js',
+                    'vendor/**/*.js',
                     'app/index.js',
                     'app/**/*.js',
                     '.tmp/*.js',
@@ -119,7 +113,19 @@ module.exports = function(grunt) {
                 hostname: 'localhost',
                 livereload: LIVERELOAD_PORT
             },
-            server:{}
+            build:{
+                options: {
+                    base: 'build/'
+                },
+                server:{}
+            },
+            release:{
+                options: {
+                    base: 'release/'
+                },
+                server:{}
+            }
+
         },
         open: {
             server: {
@@ -143,9 +149,9 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['build']);
     grunt.registerTask('base', ['clean:build', 'copy:main', 'handlebars', 'concat', 'less']);
-    grunt.registerTask('build', ['base', 'connect', 'open', 'watch']);
+    grunt.registerTask('build', ['base', 'connect:build', 'open', 'watch']);
     grunt.registerTask('release', function (){
-        var tasks = ['base', 'yuidoc', 'clean:release', 'uglify', 'copy:release', 'imagemin'];
+        var tasks = ['base', 'yuidoc', 'clean:release', 'uglify', 'copy:release', 'imagemin', 'connect:release', 'open', 'watch'];
         grunt.option('force', true);
         grunt.task.run(tasks);
     });

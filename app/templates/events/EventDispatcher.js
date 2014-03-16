@@ -59,22 +59,22 @@
      */
 	p.dispatchEvent = function ( $event ) 
 	{
-		if(this.target !== null || this.target !== undefined)
-			$event.target = this.target;
-		
-		var eventListeners = this.events[$event.type];
-		if(!eventListeners) return false;
-		
-		for (var i = eventListeners.length - 1; i >= 0; i--){
-			
-			if(eventListeners[i] != null){
-				//<%= nameSpace %>.logger.log(this, eventListeners[i], $event );
-				eventListeners[i].listener.call(eventListeners[i].context, $event);
-			}
-		};
-		
-		return true;
+        $event.target = (this.target ? this.target : $event.target);
+
+        var eventListeners = this.events[$event.type];
+        if(eventListeners){
+            for (var i = eventListeners.length - 1; i >= 0; i--){
+                eventListeners[i].listener.call(eventListeners[i].context, $event);
+            }
+
+            return true;
+        }
+
+        return false;
 	};
+
+    //alias
+    p.emit = p.dispatchEvent;
     /**
      * Find the event(s) and associated listener(s) and calls their assigned methods.
      *  __example__
@@ -96,12 +96,15 @@
         if(this.hasEventListener($type, $listener, $context)) <%= nameSpace %>.logger.log('hasEventListener ' + $type);
 		
 		if(!this.events[$type]){
-			this.events[$type] = [];
-            this.events[$type].push({listener: $listener, context: $context});
+            this.events[$type] = [{listener: $listener, context: $context}];
 		}else{
 			this.events[$type].push({listener: $listener, context: $context});
 		}
 	};
+
+	//alias
+    p.on = p.addEventListener;
+
 	 /**
      * Remove an event listener.
      *  __example__

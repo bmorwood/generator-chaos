@@ -6,4 +6,6 @@
 node_modules/*/**
 bower_components/*/**
 build
+release
+docs
 .DS_Store

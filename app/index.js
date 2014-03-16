@@ -22,6 +22,11 @@ ChaosGenerator.prototype.askFor = function askFor() {
     // have Yeoman greet the user.
     console.log(this.yeoman);
 
+    // ask if the project is a...
+    // web application - namespace
+    // library - namespace, no views or viewModels, remove all libs except underscore.
+    // banner - namespace, ask for width and height remove app based view, viewModels and logic.
+
     var prompts = [{
     name: 'nameSpace',
     message: 'Whats your project Name Space?'
@@ -54,8 +59,8 @@ ChaosGenerator.prototype.app = function app() {
     this.mkdir('css/imgs');
 
     this.mkdir('locales');
+    this.mkdir('vendor');
 
-    this.copy('_bower.json', 'bower.json');
     this.copy('_gitignore', '.gitignore');
 
     this.copy('_gruntfile.js', 'gruntfile.js');
@@ -64,6 +69,28 @@ ChaosGenerator.prototype.app = function app() {
 };
 
 ChaosGenerator.prototype.projectfiles = function projectfiles() {
+
+    this.copy('vendor/handlebars.runtime.js', 'vendor/handlebars.runtime.js');
+    this.copy('vendor/i18next.js', 'vendor/i18next.js');
+    this.copy('vendor/jquery.address.js', 'vendor/jquery.address.js');
+    this.copy('vendor/jquery.js', 'vendor/jquery.js');
+    this.copy('vendor/knockout-latest.js', 'vendor/knockout-latest.js');
+    this.copy('vendor/knockout.mapping.js', 'vendor/knockout.mapping.js');
+    this.copy('vendor/modernizr.js', 'vendor/modernizr.js');
+    this.copy('vendor/underscore.js', 'vendor/underscore.js');
+
+    this.copy('vendor/greensock/TweenMax.js', 'vendor/greensock/TweenMax.js');
+    this.copy('vendor/greensock/TimelineMax.js', 'vendor/greensock/TimelineMax.js');
+    this.copy('vendor/greensock/utils/Draggable.js', 'vendor/greensock/utils/Draggable.js');
+    this.copy('vendor/greensock/easing/EasePack.js', 'vendor/greensock/easing/EasePack.js');
+    this.copy('vendor/greensock/plugins/AttrPlugin.js', 'vendor/greensock/plugins/AttrPlugin.js');
+    this.copy('vendor/greensock/plugins/BezierPlugin.js', 'vendor/greensock/plugins/BezierPlugin.js');
+    this.copy('vendor/greensock/plugins/ColorPropsPlugin.js', 'vendor/greensock/plugins/ColorPropsPlugin.js');
+    this.copy('vendor/greensock/plugins/CSSPlugin.js', 'vendor/greensock/plugins/CSSPlugin.js');
+    this.copy('vendor/greensock/plugins/CSSRulePlugin.js', 'vendor/greensock/plugins/CSSRulePlugin.js');
+    this.copy('vendor/greensock/plugins/RoundPropsPlugin.js', 'vendor/greensock/plugins/RoundPropsPlugin.js');
+
+
     this.copy('jshintrc', '.jshintrc');
 
     this.copy('locales/dev/translation.json', 'locales/dev/translation.json');
@@ -74,6 +101,8 @@ ChaosGenerator.prototype.projectfiles = function projectfiles() {
     this.template('index.html', 'index.html');
     this.template('index.js', 'app/index.js');
     this.template('_package.json', 'package.json');
+
+
 
 
 

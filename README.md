@@ -81,13 +81,13 @@ Available generators:
 - singleton
 - view model
 - view
+- less
 
 ```
 yo chaos:entity [object name]
 ```
 this is a multiple choice selector, you can also use the 'All' to generate all entities.
 choose from the available list items, you can select any combination you want.
-
 
 ## Typical workflow
 
